@@ -638,6 +638,86 @@ a:focus {
   opacity: 0.9;
 }
 
+.editorial-manifesto {
+  background-color: var(--cream-bg);
+  overflow: hidden;
+}
+
+.editorial-manifesto::before {
+  content: '';
+  position: absolute;
+  top: 8%;
+  right: 6%;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(232,111,179,0.16), transparent 60%);
+  border-radius: 50%;
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.editorial-intro {
+  position: relative;
+  z-index: 2;
+}
+
+.editorial-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+  color: var(--dark-text);
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.editorial-title::before {
+  content: '“';
+  position: absolute;
+  top: -1rem;
+  left: -0.2rem;
+  font-size: 5.5rem;
+  color: rgba(232,111,179,0.18);
+  z-index: -1;
+}
+
+.editorial-underline {
+  width: 90px;
+  height: 6px;
+  background-color: var(--bright-pink);
+  border-radius: 999px;
+  box-shadow: 0 10px 25px rgba(232,111,179,0.12);
+}
+
+.editorial-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.manifesto-text {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--dark-text);
+  max-width: 48rem;
+}
+
+.manifesto-text .text-highlight-pink {
+  color: var(--bright-pink);
+  font-weight: 700;
+}
+
+@media (max-width: 991.98px) {
+  .editorial-manifesto::before {
+    display: none;
+  }
+  .editorial-title::before {
+    top: -0.55rem;
+    font-size: 4.2rem;
+  }
+}
+
 /* Custom Cards */
 .custom-card {
   border: 3px solid var(--dark-text) !important;
