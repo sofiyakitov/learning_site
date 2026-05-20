@@ -1,0 +1,36 @@
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * noka:
+ *   - http://typekit.com/eulas/00000000000000007735f6dc
+ *   - http://typekit.com/eulas/00000000000000007735f6e0
+ *   - http://typekit.com/eulas/00000000000000007735f6df
+ *
+ * © 2009-2026 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2023-06-01 16:32:30 UTC"}*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=qcj5wyb&ht=tk&f=49179.49180.49182&a=51282414&app=typekit&e=css");
+
+@font-face {
+font-family:"noka";
+src:url("https://use.typekit.net/af/7fb4cb/00000000000000007735f6dc/30/l?subset_id=2&fvd=n9&v=3") format("woff2"),url("https://use.typekit.net/af/7fb4cb/00000000000000007735f6dc/30/d?subset_id=2&fvd=n9&v=3") format("woff"),url("https://use.typekit.net/af/7fb4cb/00000000000000007735f6dc/30/a?subset_id=2&fvd=n9&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:900;font-stretch:normal;
+}
+
+@font-face {
+font-family:"noka";
+src:url("https://use.typekit.net/af/c5737e/00000000000000007735f6e0/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("woff2"),url("https://use.typekit.net/af/c5737e/00000000000000007735f6e0/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("woff"),url("https://use.typekit.net/af/c5737e/00000000000000007735f6e0/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:800;font-stretch:normal;
+}
+
+@font-face {
+font-family:"noka";
+src:url("https://use.typekit.net/af/cf025c/00000000000000007735f6df/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/cf025c/00000000000000007735f6df/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/cf025c/00000000000000007735f6df/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:300;font-stretch:normal;
+}
+
+.tk-noka { font-family: "noka",sans-serif; }

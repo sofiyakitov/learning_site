@@ -1,0 +1,250 @@
+.c-vertical-tabs {
+	-webkit-animation: fadeIn 1s 1s backwards;
+	animation: fadeIn 1s 1s backwards
+}
+
+.c-vertical-tabs,
+.c-vertical-tabs__inner {
+	width: 100%;
+	transform: translate(0);
+	overflow: hidden
+}
+
+.c-vertical-tabs__inner {
+	display: flex;
+	flex-direction: column
+}
+
+@media (max-width:1200px) {
+	.c-vertical-tabs__inner {
+		height: auto!important
+	}
+}
+
+@media (min-width:1201px) {
+	.c-vertical-tabs__inner {
+		flex-direction: row;
+		height: 100px
+	}
+}
+
+.c-vertical-tabs__item {
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: #fff;
+	transition: transform .4s
+}
+
+@media (max-width:1200px) {
+	.c-vertical-tabs__item {
+		position: relative;
+		flex-direction: column;
+		width: 100%!important;
+		transform: none!important;
+		transition: none
+	}
+}
+
+.c-vertical-tabs__content-wrapper {
+	display: none;
+	box-sizing: border-box
+}
+
+@media (max-width:1200px) {
+	.c-vertical-tabs__content-wrapper {
+		width: 100%!important
+	}
+}
+
+@media (min-width:1201px) {
+	.c-vertical-tabs__content-wrapper {
+		display: flex;
+		flex-direction: row;
+		width: 100%
+	}
+}
+
+@media (max-width:1200px) {
+	.c-vertical-tabs__item.is-active .c-vertical-tabs__content-wrapper {
+		display: block
+	}
+}
+
+.c-vertical-tabs__main-image {
+	margin-bottom: 34px
+}
+
+.c-vertical-tabs__main-image img {
+	display: block;
+	width: 100%;
+	height: auto
+}
+
+@media (min-width:1201px) {
+	.c-vertical-tabs__main-image {
+		width: 50%;
+		height: 100%;
+		margin-bottom: 0
+	}
+	.c-vertical-tabs__main-image img {
+		height: 100%;
+		-o-object-fit: cover;
+		font-family: "object-fit:cover";
+		object-fit: cover
+	}
+}
+
+.c-vertical-tabs__content {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	padding: 0 20px
+}
+
+@media (min-width:768px) {
+	.c-vertical-tabs__main-image+.c-vertical-tabs__content {
+		width: 50%
+	}
+}
+
+.c-vertical-tabs__tab-wrapper {
+	background-color: #fff
+}
+
+.c-vertical-tabs__tab {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 1;
+	color: #aaa;
+	background-color: transparent;
+	text-transform: uppercase;
+	-webkit-tap-highlight-color: transparent;
+	mix-blend-mode: difference
+}
+
+@media (min-width:1201px) {
+	.c-vertical-tabs__tab {
+		width: 0;
+		padding-left: 2.4em;
+		white-space: nowrap
+	}
+}
+
+.c-vertical-tabs__tab:before {
+	content: "";
+	order: 1;
+	position: absolute;
+	top: 50%;
+	right: .7em;
+	display: block;
+	margin-top: -.7em;
+	width: 1.4em;
+	height: 1.4em;
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg fill='%23aaa' width='24' height='24' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd'%3E%3Cpath d='M12 0C5.377 0 0 5.377 0 12s5.377 12 12 12 12-5.377 12-12S18.623 0 12 0zm0 1C5.929 1 1 5.929 1 12s4.929 11 11 11 11-4.929 11-11S18.071 1 12 1zm4.828 11.5l-4.608 3.763.679.737L19 12l-6.112-5-.666.753 4.604 3.747H5v1h11.828z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-size: contain;
+	transition-property: transform, opacity;
+	transition-duration: .35s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	opacity: .5
+}
+
+@media (max-width:1200px) {
+	.c-vertical-tabs__tab:before {
+		transform: rotate(90deg)
+	}
+}
+
+@media (min-width:1201px) {
+	.c-vertical-tabs__tab:before {
+		top: auto;
+		right: auto;
+		left: 50%;
+		bottom: .6em;
+		margin-left: -.7em
+	}
+}
+
+.c-vertical-tabs__tab:hover:before {
+	opacity: 1
+}
+
+.c-vertical-tabs__tab:hover span {
+	opacity: .75
+}
+
+.c-vertical-tabs__tab span {
+	display: block;
+	padding: .7em;
+	transition: opacity .35s
+}
+
+@media (min-width:1201px) {
+	.c-vertical-tabs__tab span {
+		position: absolute;
+		top: 0;
+		left: 100%;
+		transform: rotate(90deg);
+		transform-origin: 0 0;
+		pointer-events: none
+	}
+}
+
+.c-vertical-tabs__item.is-active .c-vertical-tabs__tab {
+	cursor: default
+}
+
+.c-vertical-tabs__item.is-active .c-vertical-tabs__tab:before {
+	opacity: 1;
+	transform: rotate(180deg)
+}
+
+@media (min-width:1201px) {
+	.c-vertical-tabs__item.is-active .c-vertical-tabs__tab:before {
+		transform: rotate(-90deg)
+	}
+}
+
+.c-vertical-tabs__item.is-active .c-vertical-tabs__tab span {
+	opacity: 1
+}
+
+@media (min-width:1201px) {
+	.c-vertical-tabs__item.is-active~.c-vertical-tabs__item .c-vertical-tabs__tab:before {
+		transform: rotate(180deg)
+	}
+}
+
+.c-vertical-tabs img {
+	max-width: -webkit-fit-content!important;
+	max-width: -moz-fit-content!important;
+	max-width: fit-content!important
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0
+	}
+	to {
+		opacity: 1
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0
+	}
+	to {
+		opacity: 1
+	}
+}

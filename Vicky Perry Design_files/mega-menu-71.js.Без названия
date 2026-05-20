@@ -1,0 +1,70 @@
+
+  function reinitSiteLifecycle(){const bundleScript=document.querySelector('script[src$="site-bundle.js"]');if(bundleScript){const bundleScriptClone=document.createElement("script"),bundleScriptParent=bundleScript.parentNode;bundleScriptClone.src=bundleScript.getAttribute("src"),bundleScriptParent.removeChild(bundleScript),bundleScriptParent.appendChild(bundleScriptClone)}}
+
+     $('.header-nav-folder-title[href^="/menu-"]').each(function() {
+    var link = $(this).attr('href');
+    var idName = link.slice(6);
+    $(this).parent().addClass('folder');
+    $(this).parent().after('<div id='+idName+' class="mega"></div>'); 
+    $('#'+idName).load('/mega-' + idName + ' #page .page-section',function(){
+      window.Squarespace.initializeLayoutBlocks(Y,Y.one("#"+idName));
+      reinitSiteLifecycle();
+      imagePull();
+    });
+  })
+  
+   $(function() {
+   $('<div id="popOne"></div>') .appendTo (".menu");
+   $('#popOne').load('/pop-one' + ' #page .page-section',function(){
+         window.Squarespace.initializeLayoutBlocks(Y,Y.one("#popOne"));
+    reinitSiteLifecycle();
+    imagePull();
+    });
+});
+  
+    $(function() {
+   $('<div id="popTwo"></div>') .appendTo (".menu2");
+   $('#popTwo').load('/pop-two' + ' #page .page-section',function(){
+         window.Squarespace.initializeLayoutBlocks(Y,Y.one("#popTwo"));
+    reinitSiteLifecycle();
+    imagePull();
+     
+    });
+});
+  
+
+const imagePull = function() {
+
+     $('#popOne img, #popTwo img, .mega img, #mobileNav img').each(function() {
+     var source = $(this).attr("data-src");
+    $(this).attr("src", source);
+});
+
+
+} 
+
+  const addMarkdown = function(){
+$('#mobileNav .sqs-block-markdown').css('cursor','pointer');
+$("#mobileNav .sqs-block-markdown").nextUntil(".sqs-block-markdown").slideToggle();
+$("#mobileNav .sqs-block-markdown").click(function() {$(this).nextUntil(".sqs-block-markdown").slideToggle();});
+}
+
+
+
+
+
+const addToggle = function(){
+$("#mobileNav .sqs-block-markdown").click(function() {$(this).toggleClass('activedrop');});
+}
+
+   $(function() {
+   $('<div id="mobileNav"></div>') .appendTo (".header-menu-nav");
+      $('#mobileNav').load('/custom-mobile' + ' #page .page-section',function(){
+                 window.Squarespace.initializeLayoutBlocks(Y,Y.one("#mobileNav"));;
+        addMarkdown();
+        addToggle();
+        imagePull();
+      
+      
+    });
+});
