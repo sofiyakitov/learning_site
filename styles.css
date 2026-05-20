@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Syne:wght@700;800&display=swap');
 
 :root {
-  --deep-purple: #5B2EFF;
-  --bright-pink: #FF5DB1;
+  --deep-purple: #6E59CF;
+  --bright-pink: #E86FB3;
   --soft-lavender: #C8B8FF;
   --soft-peach: #FFD6C9;
   --cream-bg: #F8F5F1;
@@ -189,10 +189,10 @@ a:focus {
 
 /* Compact hero image styling */
 .hero-img {
-  max-width: 100%;
-  max-height: 320px !important;
-  width: auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
   height: auto !important;
+  max-height: none !important;
   object-fit: contain !important;
   border-radius: 20px;
 }
@@ -215,10 +215,10 @@ a:focus {
 .hero-title {
   font-family: 'Syne', sans-serif;
   font-size: clamp(2.8rem, 5.5vw, 4.5rem);
-  line-height: 1.15;
+  line-height: 1.30;
   font-weight: 800 !important;
   color: var(--dark-text);
-  margin-bottom: 2rem;
+  margin-bottom: 2.2rem;
   letter-spacing: -1px;
 }
 
@@ -226,16 +226,17 @@ a:focus {
   position: relative;
   z-index: 1;
   display: inline-block;
+  margin: 4px 8px;
 }
 
 .text-highlight-pink::before {
   content: '';
   position: absolute;
   bottom: 8px;
-  left: -6px;
-  right: -6px;
+  left: -8px;
+  right: -8px;
   height: 45%;
-  background-color: var(--bright-pink);
+  background-color: #E29BBF; /* calmer, softer premium pink */
   z-index: -1;
   transform: rotate(-1.5deg);
   border-radius: 4px;
@@ -246,12 +247,13 @@ a:focus {
   z-index: 1;
   display: inline-block;
   color: var(--cream-bg) !important;
-  background-color: var(--deep-purple);
-  padding: 2px 14px;
+  background-color: #7966D6; /* calmer, softer premium purple */
+  padding: 4px 18px; /* slightly more padding for a cleaner block look */
   border: 3px solid var(--dark-text);
   transform: rotate(1.5deg);
-  box-shadow: 5px 5px 0px var(--dark-text);
-  border-radius: 6px;
+  box-shadow: 5px 5px 0px rgba(30, 30, 30, 0.25); /* softer shadow */
+  border-radius: 8px;
+  margin: 4px 8px;
 }
 
 .hero-card-container {
@@ -329,6 +331,15 @@ a:focus {
   position: relative;
   display: inline-block;
   margin-top: 2rem;
+  width: 100%;
+  max-width: 480px; /* larger base size for mobile and tablet */
+  transition: max-width 0.3s ease;
+}
+
+@media (min-width: 992px) {
+  .collage-wrapper {
+    max-width: 640px; /* 600px–700px on desktop, representing max 50% of hero width */
+  }
 }
 
 .collage-back-card {
@@ -350,9 +361,10 @@ a:focus {
   border: 3px solid var(--dark-text);
   border-radius: 24px;
   background-color: var(--cream-bg);
-  box-shadow: 7px 7px 0px var(--dark-text);
-  max-width: 90%;
-  max-height: 320px !important;
+  box-shadow: 8px 8px 0px rgba(30, 30, 30, 0.25); /* softer shadow */
+  width: 100% !important;
+  max-width: 100% !important;
+  max-height: none !important;
   object-fit: contain !important;
   transform: rotate(1deg);
   transition: transform 0.3s ease;
@@ -366,17 +378,22 @@ a:focus {
 .floating-sticker {
   position: absolute;
   z-index: 3;
-  padding: 10px 16px;
+  padding: 12px 18px; /* larger base size */
   border: 3px solid var(--dark-text);
-  border-radius: 14px;
+  border-radius: 16px;
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 0.85rem;
-  box-shadow: 4px 4px 0px var(--dark-text);
+  font-size: 0.95rem; /* larger base text */
+  box-shadow: 4px 4px 0px rgba(30, 30, 30, 0.25); /* softer shadow */
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.floating-sticker .sticker-icon {
+  font-size: 1.15rem;
 }
 
 .sticker-whatsapp {
@@ -409,6 +426,68 @@ a:focus {
   left: 15%;
   transform: rotate(-4deg);
   animation: sticker-float-4 5.5s ease-in-out infinite;
+}
+
+/* Responsive sizes & offsets for desktop */
+@media (min-width: 992px) {
+  .floating-sticker {
+    padding: 14px 22px; /* scaled up together with image */
+    font-size: 1.1rem; /* larger text for better readability */
+    border-radius: 18px;
+    box-shadow: 6px 6px 0px rgba(30, 30, 30, 0.25); /* softer and slightly larger offset shadow */
+    gap: 12px;
+  }
+  .floating-sticker .sticker-icon {
+    font-size: 1.4rem; /* scaled up stickers */
+  }
+
+  .sticker-whatsapp {
+    right: -50px;
+    top: 6%;
+  }
+
+  .sticker-deadline {
+    left: -35px;
+    bottom: 12%;
+  }
+
+  .sticker-insta {
+    right: -60px;
+    top: 52%;
+  }
+
+  .sticker-focus {
+    top: -30px;
+    left: 18%;
+  }
+}
+
+/* Responsive positions for smaller mobile views to prevent offscreen overflow */
+@media (max-width: 576px) {
+  .floating-sticker {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    box-shadow: 3px 3px 0px rgba(30, 30, 30, 0.25);
+  }
+  .floating-sticker .sticker-icon {
+    font-size: 1.0rem;
+  }
+  .sticker-whatsapp {
+    right: -10px;
+    top: 5%;
+  }
+  .sticker-deadline {
+    left: -10px;
+    bottom: 10%;
+  }
+  .sticker-insta {
+    right: -10px;
+    top: 60%;
+  }
+  .sticker-focus {
+    left: 5%;
+    top: -15px;
+  }
 }
 
 @keyframes sticker-float-1 {
@@ -1175,15 +1254,18 @@ main section.hero-section[style*="background-color"] {
     align-items: center;
     gap: 4rem;
   }
-  
+
   .subpage-hero-text {
-    width: 45%; /* Text block occupies around 40-45% width */
+    width: 45%;
+    /* Text block occupies around 40-45% width */
     text-align: right;
   }
-  
+
   .subpage-hero-image-container {
-    width: 520px; /* 480px-560px on desktop */
-    max-width: 45%; /* max-width: 45% of the hero section */
+    width: 520px;
+    /* 480px-560px on desktop */
+    max-width: 45%;
+    /* max-width: 45% of the hero section */
     min-width: 420px;
     height: auto;
     margin: 0;
@@ -1195,7 +1277,7 @@ main section.hero-section[style*="background-color"] {
     width: 100%;
     margin-bottom: 2rem;
   }
-  
+
   .subpage-hero-image-container {
     width: 100%;
     max-width: 420px;
@@ -1243,8 +1325,13 @@ main section.hero-section[style*="background-color"] {
 }
 
 @keyframes blob-float-subpage {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(15px, -15px) scale(1.1); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(15px, -15px) scale(1.1);
+  }
 }
 
 /* Decorative background card slightly offset behind the image */
@@ -1297,9 +1384,11 @@ main section.hero-section[style*="background-color"] {
   0% {
     transform: translateY(0px) rotate(-1.5deg);
   }
+
   50% {
     transform: translateY(-10px) rotate(-0.5deg);
   }
+
   100% {
     transform: translateY(0px) rotate(-1.5deg);
   }
