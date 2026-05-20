@@ -8,7 +8,7 @@
   --cream-bg: #F8F5F1;
   --dark-text: #1E1E1E;
   --accent-coral: #FF8A7A;
-  
+
   --primary-bg: var(--cream-bg);
   --main-text: var(--dark-text);
   --secondary-text: #4E4E4E;
@@ -24,7 +24,7 @@
 /* Global Reset & Texture */
 body {
   background-color: var(--cream-bg);
-  background-image: 
+  background-image:
     linear-gradient(rgba(30, 30, 30, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(30, 30, 30, 0.03) 1px, transparent 1px);
   background-size: 24px 24px;
@@ -36,7 +36,12 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-headings);
   font-weight: 800;
   color: var(--dark-text);
@@ -175,11 +180,21 @@ a:focus {
 
 /* Hero Section */
 .hero-section {
-  padding: 100px 0 80px;
-  min-height: 75vh;
+  padding: 85px 0 55px !important;
+  min-height: auto !important;
   display: flex;
   align-items: center;
   position: relative;
+}
+
+/* Compact hero image styling */
+.hero-img {
+  max-width: 100%;
+  max-height: 320px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 20px;
 }
 
 .hero-tag-badge {
@@ -337,6 +352,8 @@ a:focus {
   background-color: var(--cream-bg);
   box-shadow: 7px 7px 0px var(--dark-text);
   max-width: 90%;
+  max-height: 320px !important;
+  object-fit: contain !important;
   transform: rotate(1deg);
   transition: transform 0.3s ease;
 }
@@ -395,31 +412,74 @@ a:focus {
 }
 
 @keyframes sticker-float-1 {
-  0% { transform: translateY(0px) rotate(8deg); }
-  50% { transform: translateY(-10px) rotate(10deg); }
-  100% { transform: translateY(0px) rotate(8deg); }
+  0% {
+    transform: translateY(0px) rotate(8deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(10deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(8deg);
+  }
 }
+
 @keyframes sticker-float-2 {
-  0% { transform: translateY(0px) rotate(-6deg); }
-  50% { transform: translateY(8px) rotate(-8deg); }
-  100% { transform: translateY(0px) rotate(-6deg); }
+  0% {
+    transform: translateY(0px) rotate(-6deg);
+  }
+
+  50% {
+    transform: translateY(8px) rotate(-8deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(-6deg);
+  }
 }
+
 @keyframes sticker-float-3 {
-  0% { transform: translateY(0px) rotate(-10deg); }
-  50% { transform: translateY(-7px) rotate(-7deg); }
-  100% { transform: translateY(0px) rotate(-10deg); }
+  0% {
+    transform: translateY(0px) rotate(-10deg);
+  }
+
+  50% {
+    transform: translateY(-7px) rotate(-7deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(-10deg);
+  }
 }
+
 @keyframes sticker-float-4 {
-  0% { transform: translateY(0px) rotate(-4deg); }
-  50% { transform: translateY(12px) rotate(-2deg); }
-  100% { transform: translateY(0px) rotate(-4deg); }
+  0% {
+    transform: translateY(0px) rotate(-4deg);
+  }
+
+  50% {
+    transform: translateY(12px) rotate(-2deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(-4deg);
+  }
 }
 
 /* Floating Animation (Standard) */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .floating-element {
@@ -476,12 +536,29 @@ a:focus {
 }
 
 /* Card color schemes */
-.card-peach { background-color: var(--soft-peach) !important; }
-.card-lavender { background-color: var(--soft-lavender) !important; }
-.card-pink { background-color: var(--bright-pink) !important; }
-.card-cream { background-color: var(--cream-bg) !important; }
-.card-purple { background-color: var(--deep-purple) !important; }
-.card-coral { background-color: var(--accent-coral) !important; }
+.card-peach {
+  background-color: var(--soft-peach) !important;
+}
+
+.card-lavender {
+  background-color: var(--soft-lavender) !important;
+}
+
+.card-pink {
+  background-color: var(--bright-pink) !important;
+}
+
+.card-cream {
+  background-color: var(--cream-bg) !important;
+}
+
+.card-purple {
+  background-color: var(--deep-purple) !important;
+}
+
+.card-coral {
+  background-color: var(--accent-coral) !important;
+}
 
 /* Accessible text coloring inside cards */
 .card-purple .challenge-card-title,
@@ -497,11 +574,22 @@ a:focus {
 
 /* Section 1 Asymmetry */
 @media (min-width: 992px) {
-  .struggle-col-1 { transform: translateY(20px) rotate(1deg); }
-  .struggle-col-2 { transform: translateY(-15px) rotate(-1.5deg); }
-  .struggle-col-3 { transform: translateY(25px) rotate(2deg); }
-  .struggle-col-4 { transform: translateY(-5px) rotate(-1deg); }
-  
+  .struggle-col-1 {
+    transform: translateY(20px) rotate(1deg);
+  }
+
+  .struggle-col-2 {
+    transform: translateY(-15px) rotate(-1.5deg);
+  }
+
+  .struggle-col-3 {
+    transform: translateY(25px) rotate(2deg);
+  }
+
+  .struggle-col-4 {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+
   .struggle-grid {
     padding: 2.5rem 0;
   }
@@ -582,9 +670,17 @@ a:focus {
 }
 
 @media (min-width: 768px) {
-  .challenge-col-1 { transform: rotate(-1deg); }
-  .challenge-col-2 { transform: translateY(18px) rotate(1deg); }
-  .challenge-col-3 { transform: rotate(-2deg); }
+  .challenge-col-1 {
+    transform: rotate(-1deg);
+  }
+
+  .challenge-col-2 {
+    transform: translateY(18px) rotate(1deg);
+  }
+
+  .challenge-col-3 {
+    transform: rotate(-2deg);
+  }
 }
 
 .challenge-link-card:hover .challenge-card {
@@ -645,7 +741,7 @@ a:focus {
   background-color: #FFF9E6 !important;
   border-radius: 4px !important;
   padding: 2.5rem 1.8rem !important;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.06) !important;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.06) !important;
   border: 2px solid rgba(30, 30, 30, 0.15) !important;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
@@ -660,7 +756,7 @@ a:focus {
   height: 26px;
   background-color: rgba(255, 255, 255, 0.45);
   border: 1px dashed rgba(30, 30, 30, 0.15);
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
   z-index: 10;
 }
 
@@ -675,18 +771,38 @@ a:focus {
   border-left: 2px dashed rgba(30, 30, 30, 0.15);
 }
 
-.sticky-tape::before { left: 2px; }
-.sticky-tape::after { right: 2px; }
+.sticky-tape::before {
+  left: 2px;
+}
+
+.sticky-tape::after {
+  right: 2px;
+}
 
 .tip-sticky-card:hover {
   transform: translateY(-8px) rotate(0deg) scale(1.05) !important;
-  box-shadow: 8px 12px 20px rgba(0,0,0,0.1) !important;
+  box-shadow: 8px 12px 20px rgba(0, 0, 0, 0.1) !important;
 }
 
-.sticky-1 { transform: rotate(-2deg); background-color: #FFF9E6 !important; }
-.sticky-2 { transform: rotate(1.5deg); background-color: #EBF8FF !important; }
-.sticky-3 { transform: rotate(-1deg); background-color: #F0FFF4 !important; }
-.sticky-4 { transform: rotate(2deg); background-color: #FFF5F5 !important; }
+.sticky-1 {
+  transform: rotate(-2deg);
+  background-color: #FFF9E6 !important;
+}
+
+.sticky-2 {
+  transform: rotate(1.5deg);
+  background-color: #EBF8FF !important;
+}
+
+.sticky-3 {
+  transform: rotate(-1deg);
+  background-color: #F0FFF4 !important;
+}
+
+.sticky-4 {
+  transform: rotate(2deg);
+  background-color: #FFF5F5 !important;
+}
 
 .tip-card-title {
   font-family: 'Space Grotesk', 'Assistant', sans-serif;
@@ -836,7 +952,7 @@ a:focus {
   font-weight: 500;
   background-color: var(--cream-bg) !important;
   color: var(--dark-text) !important;
-  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.05);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .form-control:focus,
@@ -903,10 +1019,10 @@ a:focus {
   background-color: var(--soft-lavender);
   border: 2px solid var(--dark-text);
   border-radius: 8px;
-  padding: 8px 16px;
+  padding: 6px 12px;
   display: inline-flex;
-  box-shadow: 3px 3px 0px var(--dark-text);
-  margin-bottom: 2rem;
+  box-shadow: 2px 2px 0px var(--dark-text);
+  margin-bottom: 0.5rem;
 }
 
 .breadcrumb-item a {
@@ -1003,4 +1119,188 @@ a:focus {
 /* Stress Page Hero Background Override */
 main section.hero-section[style*="background-color"] {
   background-color: var(--cream-bg) !important;
+}
+
+/* Tighten layout spacing globally and for subpage elements */
+.container.mt-4,
+.container.mt-3 {
+  margin-top: 0.5rem !important;
+}
+
+.navbar {
+  padding: 0.8rem 0 !important;
+}
+
+.py-5 {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.hero-section+section.py-5,
+.hero-section+section {
+  padding-top: 1.5rem !important;
+}
+
+.collage-wrapper {
+  margin-top: 1rem !important;
+}
+
+.collage-back-card {
+  border-radius: 20px !important;
+}
+
+/* Subpage Hero Section (distractions, procrastination, stress) */
+.subpage-hero {
+  min-height: 70vh !important;
+  display: flex !important;
+  align-items: center !important;
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.subpage-hero-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .subpage-hero-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  .subpage-hero-text {
+    width: 45%; /* Text block occupies around 40-45% width */
+    text-align: right;
+  }
+  
+  .subpage-hero-image-container {
+    width: 520px; /* 480px-560px on desktop */
+    max-width: 45%; /* max-width: 45% of the hero section */
+    min-width: 420px;
+    height: auto;
+    margin: 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .subpage-hero-text {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .subpage-hero-image-container {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+.subpage-hero-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Layered decorative blobs/shapes directly behind the image */
+.hero-image-decor-blob {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--bright-pink) 0%, transparent 70%);
+  filter: blur(50px);
+  opacity: 0.6;
+  z-index: 1;
+  top: -60px;
+  left: -60px;
+  pointer-events: none;
+  animation: blob-float-subpage 8s ease-in-out infinite alternate;
+}
+
+.hero-image-decor-blob-2 {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--soft-lavender) 0%, transparent 70%);
+  filter: blur(40px);
+  opacity: 0.7;
+  z-index: 1;
+  bottom: -50px;
+  right: -50px;
+  pointer-events: none;
+  animation: blob-float-subpage 6s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes blob-float-subpage {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(15px, -15px) scale(1.1); }
+}
+
+/* Decorative background card slightly offset behind the image */
+.subpage-hero-image-card {
+  position: absolute;
+  top: 20px;
+  right: -20px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--soft-lavender);
+  border: 3px solid var(--dark-text);
+  border-radius: 32px;
+  z-index: 2;
+  transform: rotate(2.5deg);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.subpage-hero-image-container:hover .subpage-hero-image-card {
+  transform: rotate(0deg) translate(-6px, -6px);
+  background-color: var(--bright-pink);
+}
+
+/* Image floating wrapper */
+.subpage-hero-img-wrapper {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  animation: subpage-image-float 6s ease-in-out infinite;
+}
+
+/* Image styling */
+.subpage-hero-img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+  border: 3px solid var(--dark-text) !important;
+  border-radius: 32px !important;
+  box-shadow: 0 15px 35px rgba(30, 30, 30, 0.1), 8px 8px 0px var(--dark-text) !important;
+  background-color: var(--cream-bg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subpage-hero-image-container:hover .subpage-hero-img {
+  transform: scale(1.03);
+  box-shadow: 0 20px 45px rgba(30, 30, 30, 0.15), 12px 12px 0px var(--dark-text) !important;
+}
+
+@keyframes subpage-image-float {
+  0% {
+    transform: translateY(0px) rotate(-1.5deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-0.5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-1.5deg);
+  }
 }
