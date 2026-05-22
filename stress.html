@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="התמודדות עם לחץ אקדמי, עומס בלימודים וחשיבות המנוחה.">
     <title>FocusPLUS | לחץ, עומס ומנוחה</title>
     <link rel="icon" type="image/png" href="assets/images/favicon_logo_1779007637509.png">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Heebo:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 
     <style>
@@ -21,6 +25,7 @@
             min-height: 230px;
             cursor: pointer;
         }
+
         .flip-card-inner {
             position: relative;
             width: 100%;
@@ -28,9 +33,11 @@
             transition: transform 0.7s;
             transform-style: preserve-3d;
         }
+
         .flip-card.is-flipped .flip-card-inner {
             transform: rotateY(180deg);
         }
+
         .flip-card-front,
         .flip-card-back {
             position: absolute;
@@ -45,33 +52,40 @@
             text-align: center;
             padding: 1.5rem;
         }
+
         .flip-card-back {
             transform: rotateY(180deg);
             color: #000;
         }
+
         .flip-card-back h4 {
             font-weight: 700;
             margin-bottom: 1rem;
             font-size: 1.7rem;
             color: #000;
         }
+
         .flip-card-back p {
             font-size: 1.25rem;
             margin: 0;
             line-height: 1.6;
             color: #000;
         }
+
         .flip-card .custom-card {
             height: 100%;
             min-height: 230px;
         }
+
         .flip-card-front h3 {
             font-size: 1.7rem;
         }
+
         .flip-card-front p {
             font-size: 1.25rem;
             line-height: 1.6;
         }
+
         .flip-hint {
             position: absolute;
             bottom: 8px;
@@ -86,55 +100,67 @@
             border-radius: 10px;
             transition: background-color 0.25s ease, transform 0.2s ease;
         }
+
         .balance-item:hover {
             background-color: #f0ece4;
             transform: translateX(-3px);
         }
+
         .balance-check {
             cursor: pointer;
             width: 1.5rem;
             height: 1.5rem;
             margin-top: 0.25rem;
         }
+
         .balance-item label {
             cursor: pointer;
             font-size: 1.3rem;
             user-select: none;
             padding-right: 0.4rem;
         }
+
         .balance-card h3 {
             font-size: 1.6rem;
         }
-        .balance-card > p {
+
+        .balance-card>p {
             font-size: 1.15rem;
         }
-        .balance-item input:checked + label {
+
+        .balance-item input:checked+label {
             color: #2a8a4a;
             font-weight: 600;
         }
+
         .balance-meter {
             padding-top: 1.5rem;
             border-top: 1px dashed #d6d1c4;
         }
+
         .balance-title {
             font-size: 1.4rem;
         }
+
         .balance-ring-wrapper {
             position: relative;
             width: 200px;
             height: 200px;
             margin: 0 auto;
         }
+
         .balance-ring {
             width: 100%;
             height: 100%;
             transform: rotate(-90deg);
         }
+
         .ring-track {
             fill: none;
             stroke: #e6e2d6;
             stroke-width: 14;
         }
+
         .ring-progress {
             fill: none;
             stroke: #16a34a;
@@ -144,6 +170,7 @@
             stroke-dashoffset: 427;
             transition: stroke-dashoffset 0.6s ease, stroke 0.3s ease;
         }
+
         .balance-ring-text {
             position: absolute;
             inset: 0;
@@ -155,11 +182,13 @@
             color: #2c3e50;
             direction: ltr;
         }
+
         .ring-total {
             font-size: 1.5rem;
             color: #888;
             margin-right: 2px;
         }
+
         .balance-message {
             font-size: 1.6rem;
             line-height: 1.4;
@@ -170,13 +199,16 @@
         .stress-test-card h3 {
             font-size: 1.8rem;
         }
-        .stress-test-card > p {
+
+        .stress-test-card>p {
             font-size: 1.25rem;
         }
+
         .stress-q-text {
             font-size: 1.4rem;
             color: #2c3e50;
         }
+
         .stress-btn {
             background-color: #f7f3e9;
             border: 2px solid transparent;
@@ -187,27 +219,33 @@
             cursor: pointer;
             transition: all 0.2s ease;
         }
+
         .stress-btn:hover {
             background-color: #efe7d4;
             transform: translateY(-1px);
         }
+
         .stress-btn.selected {
             background-color: #2c3e50;
             color: #fff;
             border-color: #2c3e50;
         }
+
         .stress-results {
             padding-top: 1.25rem;
             border-top: 1px dashed #d6d1c4;
         }
+
         .stress-results .small {
             font-size: 1.1rem !important;
         }
+
         .stress-verdict {
             font-size: 1.4rem;
             line-height: 1.4;
             transition: color 0.3s ease;
         }
+
         #stressReset {
             font-size: 1.05rem;
             padding: 0.4rem 1rem;
@@ -216,16 +254,20 @@
         .brain-card h3 {
             font-size: 1.75rem;
         }
-        .brain-card > p {
+
+        .brain-card>p {
             font-size: 1.25rem;
             margin-bottom: 1.4rem !important;
         }
+
         .brain-item {
             border-bottom: 1px dashed #d6d1c4;
         }
+
         .brain-item:last-child {
             border-bottom: none;
         }
+
         .brain-toggle {
             width: 100%;
             background: transparent;
@@ -240,25 +282,31 @@
             text-align: right;
             transition: color 0.2s ease;
         }
+
         .brain-toggle:hover {
             color: #d63384;
         }
+
         .brain-title {
             display: flex;
             align-items: center;
             gap: 0.6rem;
         }
+
         .brain-icon {
             font-size: 1.55rem;
         }
+
         .brain-arrow {
             font-size: 0.95rem;
             transition: transform 0.3s ease;
             color: #888;
         }
+
         .brain-item[data-open="true"] .brain-arrow {
             transform: rotate(180deg);
         }
+
         .brain-content {
             max-height: 0;
             overflow: hidden;
@@ -269,11 +317,13 @@
             padding: 0 0.25rem;
             line-height: 1.6;
         }
+
         .brain-item[data-open="true"] .brain-content {
             max-height: 500px;
             opacity: 1;
             padding: 0 0.25rem 1rem;
         }
+
         .brain-tip {
             background-color: #f7f3e9;
             border-right: 3px solid #d63384;
@@ -283,6 +333,7 @@
         }
     </style>
 </head>
+
 <body>
     <a href="#main-content" class="visually-hidden-focusable">דלג לתוכן המרכזי</a>
 
@@ -290,10 +341,12 @@
         <nav class="navbar navbar-expand-lg py-3" aria-label="ניווט ראשי">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                    <img src="assets/images/favicon_logo_1779007637509.png" alt="לוגו FocusPLUS" width="40" height="40" class="rounded-circle">
+                    <img src="assets/images/favicon_logo_1779007637509.png" alt="לוגו FocusPLUS" width="40" height="40"
+                        class="rounded-circle">
                     <span class="fw-bold text-dark fs-4" style="font-family: 'Poppins', sans-serif;">FocusPLUS</span>
                 </a>
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="החלף ניווט">
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="החלף ניווט">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mainNav">
@@ -302,7 +355,8 @@
                         <li class="nav-item"><a class="nav-link" href="about.html">אודות</a></li>
                         <li class="nav-item"><a class="nav-link" href="procrastination.html">דחיינות</a></li>
                         <li class="nav-item"><a class="nav-link" href="distractions.html">הסחות דעת</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="stress.html">לחץ ומנוחה</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="stress.html">לחץ
+                                ומנוחה</a></li>
                         <li class="nav-item"><a class="nav-link" href="contactUs.html">צור קשר</a></li>
                     </ul>
                 </div>
@@ -320,17 +374,19 @@
             </nav>
         </div>
 
-        <section class="hero-section text-center text-lg-start subpage-hero position-relative overflow-hidden" style="background-color: #EFEFEF;">
+        <section class="hero-section text-center text-lg-start subpage-hero position-relative overflow-hidden"
+            style="background-color: #EFEFEF;">
             <!-- Decorative Background Blobs -->
             <div class="decorative-blob blob-1" aria-hidden="true"></div>
             <div class="decorative-blob blob-2" aria-hidden="true"></div>
-            
+
             <div class="container position-relative z-2">
                 <div class="subpage-hero-row">
                     <div class="subpage-hero-text">
                         <h1 class="display-5 fw-bold mb-3">לחץ, עומס ומנוחה</h1>
                         <p class="lead text-secondary-custom mb-4">
-                            למידה היא תהליך שדורש אנרגיה. בלי מנוחה ראויה, הלחץ עולה והיעילות צונחת. גלו איך למצוא את האיזון ולשמור על שפיות בתקופות המבחנים.
+                            למידה היא תהליך שדורש אנרגיה. בלי מנוחה ראויה, הלחץ עולה והיעילות צונחת. גלו איך למצוא את
+                            האיזון ולשמור על שפיות בתקופות המבחנים.
                         </p>
                     </div>
                     <div class="subpage-hero-image-container">
@@ -339,7 +395,8 @@
                         <div class="hero-image-decor-blob-2" aria-hidden="true"></div>
                         <div class="subpage-hero-image-card" aria-hidden="true"></div>
                         <div class="subpage-hero-img-wrapper">
-                            <img src="assets/images/lahatz.jpg" alt="איור מופשט ומרגיע המייצג שלווה מנטלית ומנוחה מעומס אקדמי" class="subpage-hero-img">
+                            <img src="assets/images/lahatz.jpg"
+                                alt="איור מופשט ומרגיע המייצג שלווה מנטלית ומנוחה מעומס אקדמי" class="subpage-hero-img">
                         </div>
                     </div>
                 </div>
@@ -355,35 +412,49 @@
                             <div class="col-md-6">
                                 <div class="custom-card p-4 stress-test-card">
                                     <h3 class="h5 fw-bold text-danger mb-3">מדד הלחץ - בדקו את עצמכם</h3>
-                                    <p class="text-secondary-custom small mb-4">ענו על 3 שאלות וקבלו תמונה אישית של מצבכם</p>
+                                    <p class="text-secondary-custom small mb-4">ענו על 3 שאלות וקבלו תמונה אישית של
+                                        מצבכם</p>
 
                                     <div class="stress-question" data-question="0">
                                         <p class="stress-q-text fw-bold mb-2">1. כמה שעות ישנתם הלילה?</p>
                                         <div class="d-flex flex-wrap gap-2 mb-3">
-                                            <button type="button" class="stress-btn" data-burn="20" data-focus="90">8+ שעות 😴</button>
-                                            <button type="button" class="stress-btn" data-burn="50" data-focus="60">6-7 שעות 🙂</button>
-                                            <button type="button" class="stress-btn" data-burn="80" data-focus="30">4-5 שעות 😵</button>
-                                            <button type="button" class="stress-btn" data-burn="100" data-focus="10">פחות מ-4 😩</button>
+                                            <button type="button" class="stress-btn" data-burn="20" data-focus="90">8+
+                                                שעות 😴</button>
+                                            <button type="button" class="stress-btn" data-burn="50" data-focus="60">6-7
+                                                שעות 🙂</button>
+                                            <button type="button" class="stress-btn" data-burn="80" data-focus="30">4-5
+                                                שעות 😵</button>
+                                            <button type="button" class="stress-btn" data-burn="100"
+                                                data-focus="10">פחות מ-4 😩</button>
                                         </div>
                                     </div>
 
                                     <div class="stress-question" data-question="1">
                                         <p class="stress-q-text fw-bold mb-2">2. כמה מבחנים יש לכם השבוע?</p>
                                         <div class="d-flex flex-wrap gap-2 mb-3">
-                                            <button type="button" class="stress-btn" data-burn="10" data-focus="90">אפס 🌴</button>
-                                            <button type="button" class="stress-btn" data-burn="40" data-focus="70">1-2 📚</button>
-                                            <button type="button" class="stress-btn" data-burn="70" data-focus="40">3-4 😰</button>
-                                            <button type="button" class="stress-btn" data-burn="100" data-focus="15">5+ 🔥</button>
+                                            <button type="button" class="stress-btn" data-burn="10" data-focus="90">אפס
+                                                🌴</button>
+                                            <button type="button" class="stress-btn" data-burn="40" data-focus="70">1-2
+                                                📚</button>
+                                            <button type="button" class="stress-btn" data-burn="70" data-focus="40">3-4
+                                                😰</button>
+                                            <button type="button" class="stress-btn" data-burn="100" data-focus="15">5+
+                                                🔥</button>
                                         </div>
                                     </div>
 
                                     <div class="stress-question" data-question="2">
-                                        <p class="stress-q-text fw-bold mb-2">3. מתי הייתה ההפסקה האמיתית האחרונה שלכם?</p>
+                                        <p class="stress-q-text fw-bold mb-2">3. מתי הייתה ההפסקה האמיתית האחרונה שלכם?
+                                        </p>
                                         <div class="d-flex flex-wrap gap-2 mb-3">
-                                            <button type="button" class="stress-btn" data-burn="15" data-focus="85">היום 👍</button>
-                                            <button type="button" class="stress-btn" data-burn="45" data-focus="55">אתמול 🙂</button>
-                                            <button type="button" class="stress-btn" data-burn="75" data-focus="30">לפני כמה ימים 😕</button>
-                                            <button type="button" class="stress-btn" data-burn="100" data-focus="10">לא זוכר 😶</button>
+                                            <button type="button" class="stress-btn" data-burn="15" data-focus="85">היום
+                                                👍</button>
+                                            <button type="button" class="stress-btn" data-burn="45"
+                                                data-focus="55">אתמול 🙂</button>
+                                            <button type="button" class="stress-btn" data-burn="75" data-focus="30">לפני
+                                                כמה ימים 😕</button>
+                                            <button type="button" class="stress-btn" data-burn="100" data-focus="10">לא
+                                                זוכר 😶</button>
                                         </div>
                                     </div>
 
@@ -394,7 +465,9 @@
                                                 <span class="small fw-bold" id="burnLabel">-</span>
                                             </div>
                                             <div class="progress" style="height: 12px;">
-                                                <div id="burnBar" class="progress-bar bg-danger" role="progressbar" style="width: 0%; transition: width 0.6s ease;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div id="burnBar" class="progress-bar bg-danger" role="progressbar"
+                                                    style="width: 0%; transition: width 0.6s ease;" aria-valuenow="0"
+                                                    aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
                                         <div class="mb-3">
@@ -403,12 +476,17 @@
                                                 <span class="small fw-bold" id="focusLabel">-</span>
                                             </div>
                                             <div class="progress" style="height: 12px;">
-                                                <div id="focusBar" class="progress-bar bg-warning" role="progressbar" style="width: 0%; transition: width 0.6s ease;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div id="focusBar" class="progress-bar bg-warning" role="progressbar"
+                                                    style="width: 0%; transition: width 0.6s ease;" aria-valuenow="0"
+                                                    aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
-                                        <p id="stressVerdict" class="mb-2 text-center fw-bold stress-verdict">ענו על השאלות כדי לראות את התוצאה ✨</p>
+                                        <p id="stressVerdict" class="mb-2 text-center fw-bold stress-verdict">ענו על
+                                            השאלות כדי לראות את התוצאה ✨</p>
                                         <div class="text-center">
-                                            <button type="button" id="stressReset" class="btn btn-sm btn-outline-secondary" style="display:none;">איפוס המבחן 🔄</button>
+                                            <button type="button" id="stressReset"
+                                                class="btn btn-sm btn-outline-secondary" style="display:none;">איפוס
+                                                המבחן 🔄</button>
                                         </div>
                                     </div>
                                 </div>
@@ -420,34 +498,43 @@
 
                                     <div class="brain-item" data-open="false">
                                         <button class="brain-toggle" type="button" aria-expanded="false">
-                                            <span class="brain-title"><span class="brain-icon">😰</span> <strong>חרדה</strong></span>
+                                            <span class="brain-title"><span class="brain-icon">😰</span>
+                                                <strong>חרדה</strong></span>
                                             <span class="brain-arrow" aria-hidden="true">▼</span>
                                         </button>
                                         <div class="brain-content">
-                                            <p class="mb-2">דאגות בלתי פוסקות מהעתיד ומציונים, קושי להירדם וקצב לב מהיר.</p>
-                                            <p class="brain-tip mb-0"><strong>מה עוזר?</strong> תרגיל נשימה 4-7-8 או רישום הדאגות על דף.</p>
+                                            <p class="mb-2">דאגות בלתי פוסקות מהעתיד ומציונים, קושי להירדם וקצב לב מהיר.
+                                            </p>
+                                            <p class="brain-tip mb-0"><strong>מה עוזר?</strong> תרגיל נשימה 4-7-8 או
+                                                רישום הדאגות על דף.</p>
                                         </div>
                                     </div>
 
                                     <div class="brain-item" data-open="false">
                                         <button class="brain-toggle" type="button" aria-expanded="false">
-                                            <span class="brain-title"><span class="brain-icon">😮‍💨</span> <strong>תשישות רגשית</strong></span>
+                                            <span class="brain-title"><span class="brain-icon">😮‍💨</span>
+                                                <strong>תשישות רגשית</strong></span>
                                             <span class="brain-arrow" aria-hidden="true">▼</span>
                                         </button>
                                         <div class="brain-content">
-                                            <p class="mb-2">חוסר סבלנות, תחושת "אין לי כוח יותר", רגישות יתר ובכי בלי סיבה ברורה.</p>
-                                            <p class="brain-tip mb-0"><strong>מה עוזר?</strong> הפסקה של 30 דקות מהמסכים ושיחה עם אדם קרוב.</p>
+                                            <p class="mb-2">חוסר סבלנות, תחושת "אין לי כוח יותר", רגישות יתר ובכי בלי
+                                                סיבה ברורה.</p>
+                                            <p class="brain-tip mb-0"><strong>מה עוזר?</strong> הפסקה של 30 דקות מהמסכים
+                                                ושיחה עם אדם קרוב.</p>
                                         </div>
                                     </div>
 
                                     <div class="brain-item" data-open="false">
                                         <button class="brain-toggle" type="button" aria-expanded="false">
-                                            <span class="brain-title"><span class="brain-icon">🧠</span> <strong>פגיעה בזיכרון</strong></span>
+                                            <span class="brain-title"><span class="brain-icon">🧠</span> <strong>פגיעה
+                                                    בזיכרון</strong></span>
                                             <span class="brain-arrow" aria-hidden="true">▼</span>
                                         </button>
                                         <div class="brain-content">
-                                            <p class="mb-2">הקורטיזול (הורמון הלחץ) מקשה על אחזור מידע שלמדנו - בדיוק כשצריך אותו במבחן.</p>
-                                            <p class="brain-tip mb-0"><strong>מה עוזר?</strong> שינה איכותית, פעילות גופנית קלה ולמידה ברווחי זמן.</p>
+                                            <p class="mb-2">הקורטיזול (הורמון הלחץ) מקשה על אחזור מידע שלמדנו - בדיוק
+                                                כשצריך אותו במבחן.</p>
+                                            <p class="brain-tip mb-0"><strong>מה עוזר?</strong> שינה איכותית, פעילות
+                                                גופנית קלה ולמידה ברווחי זמן.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -463,49 +550,61 @@
                 <h2 class="fw-bold mb-5">החשיבות של מנוחה אמיתית</h2>
                 <div class="row g-4 align-items-stretch">
                     <div class="col-md-4">
-                        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="כרטיס שינה וזיכרון - לחצו להפיכה">
+                        <div class="flip-card" tabindex="0" role="button" aria-pressed="false"
+                            aria-label="כרטיס שינה וזיכרון - לחצו להפיכה">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front custom-card border-0 shadow-none bg-soft">
-                                    <div class="fs-1 mb-3">💤</div>
+                                    <div class="mb-3"><img src="assets/images/icons/sleep.png" alt="sleep" width="40"
+                                            height="40" style="object-fit:contain;"></div>
                                     <h3 class="h5 fw-bold">שינה וזיכרון</h3>
-                                    <p class="text-secondary-custom small">בזמן השינה המוח מעבד ומקודד את המידע שלמדנו במהלך היום. לילות לבנים פוגעים ביכולת להצליח במבחן.</p>
+                                    <p class="text-secondary-custom small">בזמן השינה המוח מעבד ומקודד את המידע שלמדנו
+                                        במהלך היום. לילות לבנים פוגעים ביכולת להצליח במבחן.</p>
                                     <span class="flip-hint text-secondary-custom">לחצו לטיפ ←</span>
                                 </div>
                                 <div class="flip-card-back custom-card border-0 shadow-none bg-soft">
                                     <h4>הטיפ שלנו</h4>
-                                    <p>ישנו 7-9 שעות בלילה, והימנעו ממסכים שעה לפני השינה. שנת לילה איכותית = זיכרון חזק יותר למחרת.</p>
+                                    <p>ישנו 7-9 שעות בלילה, והימנעו ממסכים שעה לפני השינה. שנת לילה איכותית = זיכרון חזק
+                                        יותר למחרת.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="כרטיס הפסקות יעילות - לחצו להפיכה">
+                        <div class="flip-card" tabindex="0" role="button" aria-pressed="false"
+                            aria-label="כרטיס הפסקות יעילות - לחצו להפיכה">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front custom-card border-0 shadow-none bg-soft">
-                                    <div class="fs-1 mb-3">☕</div>
+                                    <div class="mb-3"><img src="assets/images/icons/coffee.png" alt="coffee" width="40"
+                                            height="40" style="object-fit:contain;"></div>
                                     <h3 class="h5 fw-bold">הפסקות יעילות</h3>
-                                    <p class="text-secondary-custom small">גלילה בטלפון היא לא מנוחה. קומו, מתחו איברים, שתו מים או צאו לנשום אוויר בחוץ.</p>
+                                    <p class="text-secondary-custom small">גלילה בטלפון היא לא מנוחה. קומו, מתחו איברים,
+                                        שתו מים או צאו לנשום אוויר בחוץ.</p>
                                     <span class="flip-hint text-secondary-custom">לחצו לטיפ ←</span>
                                 </div>
                                 <div class="flip-card-back custom-card border-0 shadow-none bg-soft">
                                     <h4>שיטת פומודורו 🍅</h4>
-                                    <p>25 דקות למידה ממוקדת + 5 דקות הפסקה אמיתית (תנועה, מים, אוויר). אחרי 4 מחזורים - הפסקה ארוכה של 20 דקות.</p>
+                                    <p>25 דקות למידה ממוקדת + 5 דקות הפסקה אמיתית (תנועה, מים, אוויר). אחרי 4 מחזורים -
+                                        הפסקה ארוכה של 20 דקות.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="כרטיס זמן התאוששות - לחצו להפיכה">
+                        <div class="flip-card" tabindex="0" role="button" aria-pressed="false"
+                            aria-label="כרטיס זמן התאוששות - לחצו להפיכה">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front custom-card border-0 shadow-none bg-soft">
-                                    <div class="fs-1 mb-3">🔋</div>
+                                    <div class="mb-3"><img src="assets/images/icons/battery.png" alt="battery"
+                                            width="40" height="40" style="object-fit:contain;"></div>
                                     <h3 class="h5 fw-bold">זמן התאוששות</h3>
-                                    <p class="text-secondary-custom small">חובה להגדיר ביום "זמן מת" שבו לא עושים שום דבר שקשור ללימודים, כדי להטעין את המצברים.</p>
+                                    <p class="text-secondary-custom small">חובה להגדיר ביום "זמן מת" שבו לא עושים שום
+                                        דבר שקשור ללימודים, כדי להטעין את המצברים.</p>
                                     <span class="flip-hint text-secondary-custom">לחצו לטיפ ←</span>
                                 </div>
                                 <div class="flip-card-back custom-card border-0 shadow-none bg-soft">
                                     <h4>רעיונות לטעינה</h4>
-                                    <p>הליכה בטבע, מוזיקה אהובה, בישול, מקלחת חמה או שיחה עם חבר. בחרו פעילות אחת ביום שתעשה לכם טוב.</p>
+                                    <p>הליכה בטבע, מוזיקה אהובה, בישול, מקלחת חמה או שיחה עם חבר. בחרו פעילות אחת ביום
+                                        שתעשה לכם טוב.</p>
                                 </div>
                             </div>
                         </div>
@@ -568,7 +667,8 @@
                                         <span id="balanceCount">0</span><span class="ring-total">/4</span>
                                     </div>
                                 </div>
-                                <p id="balanceMessage" class="mt-3 mb-0 fw-bold balance-message">בואו נתחיל - סמנו לפחות פעולה אחת! 💪</p>
+                                <p id="balanceMessage" class="mt-3 mb-0 fw-bold balance-message">בואו נתחיל - סמנו לפחות
+                                    פעולה אחת! 💪</p>
                             </div>
                         </div>
                     </div>
@@ -582,17 +682,23 @@
             <div class="row gy-4 gy-md-0 align-items-start footer-row">
                 <div class="col-md-3 footer-brand-col text-center text-md-start">
                     <a class="d-flex align-items-center gap-2 text-decoration-none footer-brand" href="index.html">
-                        <img src="assets/images/favicon_logo_1779007637509.png" alt="לוגו FocusPLUS" width="30" height="30" class="rounded-circle footer-logo">
-                        <span class="fw-bold text-dark fs-6 footer-brand-text" style="font-family: 'Poppins', sans-serif;">FocusPLUS</span>
+                        <img src="assets/images/favicon_logo_1779007637509.png" alt="לוגו FocusPLUS" width="30"
+                            height="30" class="rounded-circle footer-logo">
+                        <span class="fw-bold text-dark fs-6 footer-brand-text"
+                            style="font-family: 'Poppins', sans-serif;">FocusPLUS</span>
                     </a>
-                    <p class="text-secondary-custom small footer-desc mb-0">פורטל לסטודנטים שמחבר בין ריכוז, זמן וניהול עומס אקדמי.</p>
+                    <p class="text-secondary-custom small footer-desc mb-0">פורטל לסטודנטים שמחבר בין ריכוז, זמן וניהול
+                        עומס אקדמי.</p>
                 </div>
                 <div class="col-md-2 footer-nav-col text-center">
                     <h5 class="fw-bold mb-3 fs-6 footer-title">ניווט מהיר</h5>
                     <ul class="list-unstyled footer-links">
-                        <li><a href="index.html" class="text-secondary-custom text-decoration-none footer-link">ראשי</a></li>
-                        <li><a href="about.html" class="text-secondary-custom text-decoration-none footer-link">אודות הפרויקט</a></li>
-                        <li><a href="siteMap.html" class="text-secondary-custom text-decoration-none footer-link">מפת האתר</a></li>
+                        <li><a href="index.html" class="text-secondary-custom text-decoration-none footer-link">ראשי</a>
+                        </li>
+                        <li><a href="about.html" class="text-secondary-custom text-decoration-none footer-link">אודות
+                                הפרויקט</a></li>
+                        <li><a href="siteMap.html" class="text-secondary-custom text-decoration-none footer-link">מפת
+                                האתר</a></li>
                     </ul>
                 </div>
 
@@ -605,7 +711,8 @@
                 <div class="col-md-4 footer-contact-col text-center text-md-end">
                     <h5 class="fw-bold mb-3 fs-6 footer-title">יצירת קשר</h5>
                     <p class="text-secondary-custom small mb-2 footer-desc">יש לכם שאלה או הצעה?</p>
-                    <a href="contactUs.html" class="btn btn-outline-primary btn-sm btn-bold-outline footer-btn">צור קשר</a>
+                    <a href="contactUs.html" class="btn btn-outline-primary btn-sm btn-bold-outline footer-btn">צור
+                        קשר</a>
                 </div>
             </div>
             <div class="footer-team text-center mt-3">
@@ -617,7 +724,9 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <script>
         document.querySelectorAll('.flip-card').forEach(card => {
@@ -757,4 +866,5 @@
         });
     </script>
 </body>
+
 </html>
