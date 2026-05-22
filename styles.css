@@ -2,7 +2,7 @@
 .mindmap-section {
   position: relative;
   overflow: visible;
-  animation: mindmapFadeIn 1.2s cubic-bezier(.4,2,.6,1.2);
+  animation: mindmapFadeIn 1.2s cubic-bezier(.4, 2, .6, 1.2);
 }
 
 .mindmap-wrapper {
@@ -10,7 +10,7 @@
   max-width: 100%;
   width: clamp(320px, 95%, 1360px);
   margin: 0 auto;
-  aspect-ratio: 1400 / 700;
+  aspect-ratio: 1400 / 800;
   display: block;
 }
 
@@ -215,23 +215,23 @@
 
   /* Specific positions to keep equal weight & balance */
   .mindmap-topic-1 {
-    top: 10%;
-    left: 3%;
+    top: 2%;
+    left: 8.5%;
   }
 
   .mindmap-topic-2 {
-    top: 10%;
-    right: 3%;
+    top: 2%;
+    right: 8.5%;
   }
 
   .mindmap-topic-3 {
-    bottom: 10%;
-    right: 3%;
+    bottom: 2%;
+    right: 1.5%;
   }
 
   .mindmap-topic-4 {
-    bottom: 10%;
-    left: 3%;
+    bottom: 2%;
+    left: 1.5%;
   }
 }
 
@@ -306,9 +306,17 @@
 }
 
 @keyframes mindmapFadeIn {
-  from { opacity: 0; transform: translateY(40px) scale(0.98); }
-  to { opacity: 1; transform: none; }
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Syne:wght@700;800&display=swap');
 
 :root {
@@ -606,11 +614,14 @@ a:focus {
   z-index: 1;
   display: inline-block;
   color: var(--cream-bg) !important;
-  background-color: #7966D6; /* calmer, softer premium purple */
-  padding: 4px 18px; /* slightly more padding for a cleaner block look */
+  background-color: #7966D6;
+  /* calmer, softer premium purple */
+  padding: 4px 18px;
+  /* slightly more padding for a cleaner block look */
   border: 3px solid var(--dark-text);
   transform: none;
-  box-shadow: 2px 2px 0px rgba(30, 30, 30, 0.18); /* softer shadow */
+  box-shadow: 2px 2px 0px rgba(30, 30, 30, 0.18);
+  /* softer shadow */
   border-radius: 10px;
   margin: 4px 8px;
 }
@@ -680,13 +691,15 @@ a:focus {
   display: inline-block;
   margin-top: 2rem;
   width: 100%;
-  max-width: 480px; /* larger base size for mobile and tablet */
+  max-width: 480px;
+  /* larger base size for mobile and tablet */
   transition: max-width 0.3s ease;
 }
 
 @media (min-width: 992px) {
   .collage-wrapper {
-    max-width: 640px; /* 600px–700px on desktop, representing max 50% of hero width */
+    max-width: 640px;
+    /* 600px–700px on desktop, representing max 50% of hero width */
   }
 }
 
@@ -709,7 +722,8 @@ a:focus {
   border: 3px solid var(--dark-text);
   border-radius: 24px;
   background-color: var(--cream-bg);
-  box-shadow: 8px 8px 0px rgba(30, 30, 30, 0.25); /* softer shadow */
+  box-shadow: 8px 8px 0px rgba(30, 30, 30, 0.25);
+  /* softer shadow */
   width: 100% !important;
   max-width: 100% !important;
   max-height: none !important;
@@ -726,13 +740,16 @@ a:focus {
 .floating-sticker {
   position: absolute;
   z-index: 3;
-  padding: 12px 18px; /* larger base size */
+  padding: 12px 18px;
+  /* larger base size */
   border: 3px solid var(--dark-text);
   border-radius: 16px;
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 0.95rem; /* larger base text */
-  box-shadow: 4px 4px 0px rgba(30, 30, 30, 0.25); /* softer shadow */
+  font-size: 0.95rem;
+  /* larger base text */
+  box-shadow: 4px 4px 0px rgba(30, 30, 30, 0.25);
+  /* softer shadow */
   display: flex;
   align-items: center;
   gap: 10px;
@@ -779,14 +796,19 @@ a:focus {
 /* Responsive sizes & offsets for desktop */
 @media (min-width: 992px) {
   .floating-sticker {
-    padding: 14px 22px; /* scaled up together with image */
-    font-size: 1.1rem; /* larger text for better readability */
+    padding: 14px 22px;
+    /* scaled up together with image */
+    font-size: 1.1rem;
+    /* larger text for better readability */
     border-radius: 18px;
-    box-shadow: 6px 6px 0px rgba(30, 30, 30, 0.25); /* softer and slightly larger offset shadow */
+    box-shadow: 6px 6px 0px rgba(30, 30, 30, 0.25);
+    /* softer and slightly larger offset shadow */
     gap: 12px;
   }
+
   .floating-sticker .sticker-icon {
-    font-size: 1.4rem; /* scaled up stickers */
+    font-size: 1.4rem;
+    /* scaled up stickers */
   }
 
   .sticker-whatsapp {
@@ -817,21 +839,26 @@ a:focus {
     font-size: 0.85rem;
     box-shadow: 3px 3px 0px rgba(30, 30, 30, 0.25);
   }
+
   .floating-sticker .sticker-icon {
     font-size: 1.0rem;
   }
+
   .sticker-whatsapp {
     right: -10px;
     top: 5%;
   }
+
   .sticker-deadline {
     left: -10px;
     bottom: 10%;
   }
+
   .sticker-insta {
     right: -10px;
     top: 60%;
   }
+
   .sticker-focus {
     left: 5%;
     top: -15px;
@@ -962,7 +989,7 @@ a:focus {
   right: 6%;
   width: 260px;
   height: 260px;
-  background: radial-gradient(circle, rgba(232,111,179,0.16), transparent 60%);
+  background: radial-gradient(circle, rgba(232, 111, 179, 0.16), transparent 60%);
   border-radius: 50%;
   filter: blur(8px);
   pointer-events: none;
@@ -990,7 +1017,7 @@ a:focus {
   top: -1rem;
   left: -0.2rem;
   font-size: 5.5rem;
-  color: rgba(232,111,179,0.18);
+  color: rgba(232, 111, 179, 0.18);
   z-index: -1;
 }
 
@@ -999,7 +1026,7 @@ a:focus {
   height: 6px;
   background-color: var(--bright-pink);
   border-radius: 999px;
-  box-shadow: 0 10px 25px rgba(232,111,179,0.12);
+  box-shadow: 0 10px 25px rgba(232, 111, 179, 0.12);
 }
 
 .editorial-copy {
@@ -1024,6 +1051,7 @@ a:focus {
   .editorial-manifesto::before {
     display: none;
   }
+
   .editorial-title::before {
     top: -0.55rem;
     font-size: 4.2rem;
