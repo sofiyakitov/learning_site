@@ -1,3 +1,314 @@
+/* --- Mind Map Section Styles (Large & Expressive, Responsive) --- */
+.mindmap-section {
+  position: relative;
+  overflow: visible;
+  animation: mindmapFadeIn 1.2s cubic-bezier(.4,2,.6,1.2);
+}
+
+.mindmap-wrapper {
+  position: relative;
+  max-width: 100%;
+  width: clamp(320px, 95%, 1360px);
+  margin: 0 auto;
+  aspect-ratio: 1400 / 700;
+  display: block;
+}
+
+.mindmap-grid-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image: linear-gradient(0deg, #f7f7fa 1.5px, transparent 1.5px),
+    linear-gradient(90deg, #f7f7fa 1.5px, transparent 1.5px);
+  background-size: 50px 50px;
+  opacity: 0.6;
+  border-radius: 4rem;
+  pointer-events: none;
+}
+
+.mindmap-svg {
+  pointer-events: none;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Base topic card styles */
+.mindmap-topic {
+  background: #fff;
+  border-radius: 30px 50px 40px 50px / 50px 30px 50px 40px;
+  box-shadow: 6px 6px 0px rgba(30, 30, 30, 0.08);
+  border: 5px solid #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+  font-family: inherit;
+}
+
+.mindmap-topic:hover {
+  transform: scale(1.04) rotate(-1deg);
+  box-shadow: 10px 10px 0px #333;
+}
+
+/* Icon styling */
+.mindmap-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 3px 3px 0px #333;
+  font-family: inherit;
+  border: 4px solid #333;
+}
+
+/* Typography in mindmap topics */
+.mindmap-title {
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  text-align: center;
+  color: inherit;
+}
+
+.mindmap-desc {
+  color: #444;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Center Brain Styles */
+.mindmap-center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.mindmap-brain-wrapper {
+  background-color: #FFF3E0;
+  border: 6px solid #333;
+  border-radius: 50%;
+  box-shadow: 8px 8px 0px #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mindmap-brain-wrapper:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 10px 10px 0px #333;
+}
+
+.mindmap-brain-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Center label */
+.mindmap-center-label {
+  background: #ffffff;
+  border: 3.5px solid #333;
+  border-radius: 14px;
+  box-shadow: 4px 4px 0px #333;
+  color: #333;
+  font-weight: 800;
+  font-family: inherit;
+  letter-spacing: 1px;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Topic-specific colors */
+.mindmap-topic-1 .mindmap-icon {
+  background: #FFD59E;
+  color: #FF9800;
+}
+
+.mindmap-topic-1 .mindmap-title {
+  color: #FF9800;
+}
+
+.mindmap-topic-2 .mindmap-icon {
+  background: #B39DDB;
+  color: #7C4DFF;
+}
+
+.mindmap-topic-2 .mindmap-title {
+  color: #7C4DFF;
+}
+
+.mindmap-topic-3 .mindmap-icon {
+  background: #F8BBD0;
+  color: #E91E63;
+}
+
+.mindmap-topic-3 .mindmap-title {
+  color: #E91E63;
+}
+
+.mindmap-topic-4 .mindmap-icon {
+  background: #FFF3E0;
+  color: #FFB300;
+}
+
+.mindmap-topic-4 .mindmap-title {
+  color: #FFB300;
+}
+
+/* DESKTOP LAYOUT (min-width: 992px) */
+@media (min-width: 992px) {
+  .mindmap-topic {
+    position: absolute;
+    width: clamp(280px, 22vw, 360px);
+    padding: 26px 30px;
+    min-height: 170px;
+  }
+
+  .mindmap-icon {
+    width: 68px;
+    height: 68px;
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+  }
+
+  .mindmap-title {
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+  }
+
+  .mindmap-desc {
+    font-size: 0.98rem;
+  }
+
+  .mindmap-center-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .mindmap-brain-wrapper {
+    width: clamp(190px, 16vw, 240px);
+    height: clamp(190px, 16vw, 240px);
+    padding: 20px;
+  }
+
+  .mindmap-center-label {
+    margin-top: -15px;
+    padding: 6px 20px;
+    font-size: 1.2rem;
+    z-index: 11;
+  }
+
+  /* Specific positions to keep equal weight & balance */
+  .mindmap-topic-1 {
+    top: 10%;
+    left: 3%;
+  }
+
+  .mindmap-topic-2 {
+    top: 10%;
+    right: 3%;
+  }
+
+  .mindmap-topic-3 {
+    bottom: 10%;
+    right: 3%;
+  }
+
+  .mindmap-topic-4 {
+    bottom: 10%;
+    left: 3%;
+  }
+}
+
+/* MOBILE & TABLET LAYOUT (max-width: 991px) */
+@media (max-width: 991px) {
+  .mindmap-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    aspect-ratio: auto;
+    min-height: auto;
+    width: 100%;
+    padding: 20px 10px;
+  }
+
+  .mindmap-svg {
+    display: none;
+  }
+
+  .mindmap-center-container {
+    position: relative;
+    transform: none;
+    left: auto;
+    top: auto;
+    margin-bottom: 10px;
+    order: 1;
+  }
+
+  .mindmap-brain-wrapper {
+    width: 180px;
+    height: 180px;
+    padding: 16px;
+  }
+
+  .mindmap-center-label {
+    margin-top: -12px;
+    padding: 5px 16px;
+    font-size: 1.1rem;
+    z-index: 11;
+  }
+
+  .mindmap-topic {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    min-height: auto;
+    padding: 24px 28px;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    border-radius: 24px;
+    order: 2;
+  }
+
+  .mindmap-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  .mindmap-title {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .mindmap-desc {
+    font-size: 0.95rem;
+  }
+}
+
+@keyframes mindmapFadeIn {
+  from { opacity: 0; transform: translateY(40px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Syne:wght@700;800&display=swap');
 
 :root {

@@ -114,45 +114,58 @@
         </section>
 
         <!-- Section 1: Why Students Struggle -->
-        <section class="py-5 struggle-section position-relative bg-transparent">
+        <section class="py-5 struggle-section mindmap-section position-relative bg-transparent">
             <div class="decorative-blob blob-4" aria-hidden="true"></div>
             <div class="container py-5 position-relative z-2">
                 <div class="text-center mb-5 section-title-wrap">
                     <h2 class="fw-bold section-title">למה אנחנו מתקשים?</h2>
                     <p class="text-secondary-custom section-subtitle">הגורמים המרכזיים שפוגעים בפרודוקטיביות שלנו</p>
                 </div>
-                <div class="row g-4 struggle-grid">
-                    <div class="col-md-6 col-lg-3 struggle-col-1">
-                        <div class="custom-card p-4 text-center struggle-card card-peach">
-                            <div class="display-4 mb-3 card-emoji" aria-hidden="true">📱</div>
-                            <h3 class="h5 fw-bold card-title">עומס מידע</h3>
-                            <p class="text-secondary-custom small card-text">מוצפים במידע והתראות שמקשים על מיקוד ממושך.
-                            </p>
-                        </div>
+                <div class="mindmap-wrapper position-relative mx-auto">
+                    <!-- Subtle grid background -->
+                    <div class="mindmap-grid-bg"></div>
+                    <!-- SVG Mind Map (responsive) -->
+                    <svg viewBox="0 0 1400 700" class="mindmap-svg" aria-label="מפת חשיבה של אתגרי הריכוז בסטודנטים עם ארבעה גורמים עיקריים המחוברים למוח הסטודנט" role="image">
+                        <!-- Curved connectors -->
+                        <path d="M700,350 C550,220 450,130 320,160" stroke="#FFD59E" stroke-width="12" fill="none"/>
+                        <path d="M700,350 C850,220 950,130 1080,160" stroke="#B39DDB" stroke-width="12" fill="none"/>
+                        <path d="M700,350 C850,480 950,570 1080,540" stroke="#F8BBD0" stroke-width="12" fill="none"/>
+                        <path d="M700,350 C550,480 450,570 320,540" stroke="#FFE0B2" stroke-width="12" fill="none"/>
+                        <!-- Arrows -->
+                        <polygon points="330,172 300,160 330,148" fill="#FFD59E"/>
+                        <polygon points="1070,172 1100,160 1070,148" fill="#B39DDB"/>
+                        <polygon points="1070,552 1100,540 1070,528" fill="#F8BBD0"/>
+                        <polygon points="330,552 300,540 330,528" fill="#FFE0B2"/>
+                    </svg>
+                    <!-- Mind map topics -->
+                    <div class="mindmap-topic mindmap-topic-1">
+                        <div class="mindmap-icon">📱</div>
+                        <div class="mindmap-title fw-bold">עומס מידע</div>
+                        <div class="mindmap-desc">מוצפים במידע והתראות שמקשים על מיקוד ממושך.</div>
                     </div>
-                    <div class="col-md-6 col-lg-3 struggle-col-2">
-                        <div class="custom-card p-4 text-center struggle-card card-lavender">
-                            <div class="display-4 mb-3 card-emoji" aria-hidden="true">🔄</div>
-                            <h3 class="h5 fw-bold card-title">מולטי-טאסקינג</h3>
-                            <p class="text-secondary-custom small card-text">ניסיון לעשות הכל במקביל שמוביל לירידה
-                                ביעילות.</p>
-                        </div>
+                    <div class="mindmap-topic mindmap-topic-2">
+                        <div class="mindmap-icon">🔄</div>
+                        <div class="mindmap-title fw-bold">מולטי-טאסקינג</div>
+                        <div class="mindmap-desc">ניסיון לעשות הכל במקביל שמוביל לירידה ביעילות.</div>
                     </div>
-                    <div class="col-md-6 col-lg-3 struggle-col-3">
-                        <div class="custom-card p-4 text-center struggle-card card-pink">
-                            <div class="display-4 mb-3 card-emoji" aria-hidden="true">💬</div>
-                            <h3 class="h5 fw-bold card-title">רשתות חברתיות</h3>
-                            <p class="text-secondary-custom small card-text">פיתויים דיגיטליים שמושכים את תשומת הלב.</p>
-                        </div>
+                    <div class="mindmap-topic mindmap-topic-3">
+                        <div class="mindmap-icon">💬</div>
+                        <div class="mindmap-title fw-bold">רשתות חברתיות</div>
+                        <div class="mindmap-desc">פיתויים דיגיטליים שמושכים את תשומת הלב.</div>
                     </div>
-                    <div class="col-md-6 col-lg-3 struggle-col-4">
-                        <div class="custom-card p-4 text-center struggle-card card-cream">
-                            <div class="display-4 mb-3 card-emoji" aria-hidden="true">🧠</div>
-                            <h3 class="h5 fw-bold card-title">עייפות מנטלית</h3>
-                            <p class="text-secondary-custom small card-text">שחיקה קוגניטיבית עקב היעדר מנוחה מספקת.</p>
-                        </div>
+                    <div class="mindmap-topic mindmap-topic-4">
+                        <div class="mindmap-icon">🧠</div>
+                        <div class="mindmap-title fw-bold">עייפות מנטלית</div>
+                        <div class="mindmap-desc">שחיקה קוגניטיבית עקב היעדר מנוחה מספקת.</div>
                     </div>
-                </div>
+                    <!-- Central Brain Container -->
+                    <div class="mindmap-center-container">
+                        <div class="mindmap-brain-wrapper">
+                            <img src="assets/images/brain.png" class="mindmap-brain-img" alt="מוח הסטודנט">
+                        </div>
+                        <div class="mindmap-center-label fw-bold">מוח הסטודנט</div>
+                    </div>
+                </div>  
             </div>
         </section>
 
