@@ -2111,18 +2111,3 @@ main section.hero-section[style*="background-color"] {
   line-height: 1.6;
   margin-top: 0.5rem;
 }
-
-/* Custom class for replacing emojis with image-based icons in the same size */
-.emoji-icon {
-  width: 1em;
-  height: 1em;
-  object-fit: contain;
-  vertical-align: -0.1em;
-  display: inline-block;
-}
-
-/* Ensure centering inside flex containers */
-.mindmap-icon img.emoji-icon,
-.sticker-icon img.emoji-icon {
-  display: block;
-}
