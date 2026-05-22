@@ -13,6 +13,275 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .flip-card {
+            background-color: transparent;
+            perspective: 1000px;
+            min-height: 230px;
+            cursor: pointer;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 230px;
+            transition: transform 0.7s;
+            transform-style: preserve-3d;
+        }
+        .flip-card.is-flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            inset: 0;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+            color: #000;
+        }
+        .flip-card-back h4 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.7rem;
+            color: #000;
+        }
+        .flip-card-back p {
+            font-size: 1.25rem;
+            margin: 0;
+            line-height: 1.6;
+            color: #000;
+        }
+        .flip-card .custom-card {
+            height: 100%;
+            min-height: 230px;
+        }
+        .flip-card-front h3 {
+            font-size: 1.7rem;
+        }
+        .flip-card-front p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+        }
+        .flip-hint {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        .balance-item {
+            padding: 0.8rem 1rem;
+            border-radius: 10px;
+            transition: background-color 0.25s ease, transform 0.2s ease;
+        }
+        .balance-item:hover {
+            background-color: #f0ece4;
+            transform: translateX(-3px);
+        }
+        .balance-check {
+            cursor: pointer;
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-top: 0.25rem;
+        }
+        .balance-item label {
+            cursor: pointer;
+            font-size: 1.3rem;
+            user-select: none;
+            padding-right: 0.4rem;
+        }
+        .balance-card h3 {
+            font-size: 1.6rem;
+        }
+        .balance-card > p {
+            font-size: 1.15rem;
+        }
+        .balance-item input:checked + label {
+            color: #2a8a4a;
+            font-weight: 600;
+        }
+        .balance-meter {
+            padding-top: 1.5rem;
+            border-top: 1px dashed #d6d1c4;
+        }
+        .balance-title {
+            font-size: 1.4rem;
+        }
+        .balance-ring-wrapper {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        .balance-ring {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+        .ring-track {
+            fill: none;
+            stroke: #e6e2d6;
+            stroke-width: 14;
+        }
+        .ring-progress {
+            fill: none;
+            stroke: #16a34a;
+            stroke-width: 14;
+            stroke-linecap: round;
+            stroke-dasharray: 427;
+            stroke-dashoffset: 427;
+            transition: stroke-dashoffset 0.6s ease, stroke 0.3s ease;
+        }
+        .balance-ring-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #2c3e50;
+            direction: ltr;
+        }
+        .ring-total {
+            font-size: 1.5rem;
+            color: #888;
+            margin-right: 2px;
+        }
+        .balance-message {
+            font-size: 1.6rem;
+            line-height: 1.4;
+            transition: color 0.3s ease, font-size 0.4s ease, transform 0.4s ease;
+            display: inline-block;
+        }
+
+        .stress-test-card h3 {
+            font-size: 1.8rem;
+        }
+        .stress-test-card > p {
+            font-size: 1.25rem;
+        }
+        .stress-q-text {
+            font-size: 1.4rem;
+            color: #2c3e50;
+        }
+        .stress-btn {
+            background-color: #f7f3e9;
+            border: 2px solid transparent;
+            border-radius: 999px;
+            padding: 0.6rem 1.2rem;
+            font-size: 1.2rem;
+            color: #2c3e50;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .stress-btn:hover {
+            background-color: #efe7d4;
+            transform: translateY(-1px);
+        }
+        .stress-btn.selected {
+            background-color: #2c3e50;
+            color: #fff;
+            border-color: #2c3e50;
+        }
+        .stress-results {
+            padding-top: 1.25rem;
+            border-top: 1px dashed #d6d1c4;
+        }
+        .stress-results .small {
+            font-size: 1.1rem !important;
+        }
+        .stress-verdict {
+            font-size: 1.4rem;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+        #stressReset {
+            font-size: 1.05rem;
+            padding: 0.4rem 1rem;
+        }
+
+        .brain-card h3 {
+            font-size: 1.75rem;
+        }
+        .brain-card > p {
+            font-size: 1.25rem;
+            margin-bottom: 1.4rem !important;
+        }
+        .brain-item {
+            border-bottom: 1px dashed #d6d1c4;
+        }
+        .brain-item:last-child {
+            border-bottom: none;
+        }
+        .brain-toggle {
+            width: 100%;
+            background: transparent;
+            border: none;
+            padding: 1.05rem 0.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.5rem;
+            color: #2c3e50;
+            cursor: pointer;
+            text-align: right;
+            transition: color 0.2s ease;
+        }
+        .brain-toggle:hover {
+            color: #d63384;
+        }
+        .brain-title {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .brain-icon {
+            font-size: 1.55rem;
+        }
+        .brain-arrow {
+            font-size: 0.95rem;
+            transition: transform 0.3s ease;
+            color: #888;
+        }
+        .brain-item[data-open="true"] .brain-arrow {
+            transform: rotate(180deg);
+        }
+        .brain-content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+            font-size: 1.25rem;
+            color: #555;
+            padding: 0 0.25rem;
+            line-height: 1.6;
+        }
+        .brain-item[data-open="true"] .brain-content {
+            max-height: 500px;
+            opacity: 1;
+            padding: 0 0.25rem 1rem;
+        }
+        .brain-tip {
+            background-color: #f7f3e9;
+            border-right: 3px solid #d63384;
+            padding: 0.8rem 0.95rem;
+            border-radius: 6px;
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="visually-hidden-focusable">דלג לתוכן המרכזי</a>
@@ -82,36 +351,105 @@
                 <h2 class="fw-bold text-center mb-5">ההשפעות של לחץ ממושך</h2>
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
-                        <div class="row g-4">
+                        <div class="row g-4 align-items-start">
                             <div class="col-md-6">
-                                <div class="custom-card p-4">
-                                    <h3 class="h5 fw-bold text-danger mb-3">מדד הלחץ</h3>
-                                    <div class="mb-3">
-                                        <div class="d-flex justify-content-between mb-1">
-                                            <span class="small text-secondary-custom">שחיקה מנטלית</span>
-                                            <span class="small fw-bold">גבוה</span>
-                                        </div>
-                                        <div class="progress" style="height: 10px;">
-                                            <div class="progress-bar bg-danger w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" title="רמת שחיקה גבוהה"></div>
+                                <div class="custom-card p-4 stress-test-card">
+                                    <h3 class="h5 fw-bold text-danger mb-3">מדד הלחץ - בדקו את עצמכם</h3>
+                                    <p class="text-secondary-custom small mb-4">ענו על 3 שאלות וקבלו תמונה אישית של מצבכם</p>
+
+                                    <div class="stress-question" data-question="0">
+                                        <p class="stress-q-text fw-bold mb-2">1. כמה שעות ישנתם הלילה?</p>
+                                        <div class="d-flex flex-wrap gap-2 mb-3">
+                                            <button type="button" class="stress-btn" data-burn="20" data-focus="90">8+ שעות 😴</button>
+                                            <button type="button" class="stress-btn" data-burn="50" data-focus="60">6-7 שעות 🙂</button>
+                                            <button type="button" class="stress-btn" data-burn="80" data-focus="30">4-5 שעות 😵</button>
+                                            <button type="button" class="stress-btn" data-burn="100" data-focus="10">פחות מ-4 😩</button>
                                         </div>
                                     </div>
-                                    <div class="mb-3">
-                                        <div class="d-flex justify-content-between mb-1">
-                                            <span class="small text-secondary-custom">יכולת ריכוז</span>
-                                            <span class="small fw-bold">נמוך</span>
+
+                                    <div class="stress-question" data-question="1">
+                                        <p class="stress-q-text fw-bold mb-2">2. כמה מבחנים יש לכם השבוע?</p>
+                                        <div class="d-flex flex-wrap gap-2 mb-3">
+                                            <button type="button" class="stress-btn" data-burn="10" data-focus="90">אפס 🌴</button>
+                                            <button type="button" class="stress-btn" data-burn="40" data-focus="70">1-2 📚</button>
+                                            <button type="button" class="stress-btn" data-burn="70" data-focus="40">3-4 😰</button>
+                                            <button type="button" class="stress-btn" data-burn="100" data-focus="15">5+ 🔥</button>
                                         </div>
-                                        <div class="progress" style="height: 10px;">
-                                            <div class="progress-bar bg-warning w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" title="רמת ריכוז נמוכה"></div>
+                                    </div>
+
+                                    <div class="stress-question" data-question="2">
+                                        <p class="stress-q-text fw-bold mb-2">3. מתי הייתה ההפסקה האמיתית האחרונה שלכם?</p>
+                                        <div class="d-flex flex-wrap gap-2 mb-3">
+                                            <button type="button" class="stress-btn" data-burn="15" data-focus="85">היום 👍</button>
+                                            <button type="button" class="stress-btn" data-burn="45" data-focus="55">אתמול 🙂</button>
+                                            <button type="button" class="stress-btn" data-burn="75" data-focus="30">לפני כמה ימים 😕</button>
+                                            <button type="button" class="stress-btn" data-burn="100" data-focus="10">לא זוכר 😶</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="stress-results mt-4">
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <span class="small text-secondary-custom">שחיקה מנטלית</span>
+                                                <span class="small fw-bold" id="burnLabel">-</span>
+                                            </div>
+                                            <div class="progress" style="height: 12px;">
+                                                <div id="burnBar" class="progress-bar bg-danger" role="progressbar" style="width: 0%; transition: width 0.6s ease;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <span class="small text-secondary-custom">יכולת ריכוז</span>
+                                                <span class="small fw-bold" id="focusLabel">-</span>
+                                            </div>
+                                            <div class="progress" style="height: 12px;">
+                                                <div id="focusBar" class="progress-bar bg-warning" role="progressbar" style="width: 0%; transition: width 0.6s ease;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <p id="stressVerdict" class="mb-2 text-center fw-bold stress-verdict">ענו על השאלות כדי לראות את התוצאה ✨</p>
+                                        <div class="text-center">
+                                            <button type="button" id="stressReset" class="btn btn-sm btn-outline-secondary" style="display:none;">איפוס המבחן 🔄</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="custom-card p-4 h-100">
+                                <div class="custom-card p-4 brain-card">
                                     <h3 class="h5 fw-bold mb-3">מה קורה למוח בסטרס?</h3>
-                                    <p class="text-secondary-custom small mb-2"><strong>חרדה:</strong> דאגות בלתי פוסקות מהעתיד ומציונים.</p>
-                                    <p class="text-secondary-custom small mb-2"><strong>תשישות רגשית:</strong> חוסר סבלנות ותחושת "אין לי כוח יותר".</p>
-                                    <p class="text-secondary-custom small mb-0"><strong>פגיעה בזיכרון:</strong> הקורטיזול (הורמון הלחץ) מקשה על אחזור מידע שלמדנו.</p>
+                                    <p class="text-secondary-custom small mb-3">לחצו על כל סעיף כדי לקרוא עוד 👇</p>
+
+                                    <div class="brain-item" data-open="false">
+                                        <button class="brain-toggle" type="button" aria-expanded="false">
+                                            <span class="brain-title"><span class="brain-icon">😰</span> <strong>חרדה</strong></span>
+                                            <span class="brain-arrow" aria-hidden="true">▼</span>
+                                        </button>
+                                        <div class="brain-content">
+                                            <p class="mb-2">דאגות בלתי פוסקות מהעתיד ומציונים, קושי להירדם וקצב לב מהיר.</p>
+                                            <p class="brain-tip mb-0"><strong>מה עוזר?</strong> תרגיל נשימה 4-7-8 או רישום הדאגות על דף.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="brain-item" data-open="false">
+                                        <button class="brain-toggle" type="button" aria-expanded="false">
+                                            <span class="brain-title"><span class="brain-icon">😮‍💨</span> <strong>תשישות רגשית</strong></span>
+                                            <span class="brain-arrow" aria-hidden="true">▼</span>
+                                        </button>
+                                        <div class="brain-content">
+                                            <p class="mb-2">חוסר סבלנות, תחושת "אין לי כוח יותר", רגישות יתר ובכי בלי סיבה ברורה.</p>
+                                            <p class="brain-tip mb-0"><strong>מה עוזר?</strong> הפסקה של 30 דקות מהמסכים ושיחה עם אדם קרוב.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="brain-item" data-open="false">
+                                        <button class="brain-toggle" type="button" aria-expanded="false">
+                                            <span class="brain-title"><span class="brain-icon">🧠</span> <strong>פגיעה בזיכרון</strong></span>
+                                            <span class="brain-arrow" aria-hidden="true">▼</span>
+                                        </button>
+                                        <div class="brain-content">
+                                            <p class="mb-2">הקורטיזול (הורמון הלחץ) מקשה על אחזור מידע שלמדנו - בדיוק כשצריך אותו במבחן.</p>
+                                            <p class="brain-tip mb-0"><strong>מה עוזר?</strong> שינה איכותית, פעילות גופנית קלה ולמידה ברווחי זמן.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -123,26 +461,53 @@
         <section class="py-5 bg-white">
             <div class="container text-center">
                 <h2 class="fw-bold mb-5">החשיבות של מנוחה אמיתית</h2>
-                <div class="row g-4 align-items-center">
+                <div class="row g-4 align-items-stretch">
                     <div class="col-md-4">
-                        <div class="custom-card p-4 border-0 shadow-none bg-soft">
-                            <div class="fs-1 mb-3">💤</div>
-                            <h3 class="h5 fw-bold">שינה וזיכרון</h3>
-                            <p class="text-secondary-custom small">בזמן השינה המוח מעבד ומקודד את המידע שלמדנו במהלך היום. לילות לבנים פוגעים ביכולת להצליח במבחן.</p>
+                        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="כרטיס שינה וזיכרון - לחצו להפיכה">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front custom-card border-0 shadow-none bg-soft">
+                                    <div class="fs-1 mb-3">💤</div>
+                                    <h3 class="h5 fw-bold">שינה וזיכרון</h3>
+                                    <p class="text-secondary-custom small">בזמן השינה המוח מעבד ומקודד את המידע שלמדנו במהלך היום. לילות לבנים פוגעים ביכולת להצליח במבחן.</p>
+                                    <span class="flip-hint text-secondary-custom">לחצו לטיפ ←</span>
+                                </div>
+                                <div class="flip-card-back custom-card border-0 shadow-none bg-soft">
+                                    <h4>הטיפ שלנו</h4>
+                                    <p>ישנו 7-9 שעות בלילה, והימנעו ממסכים שעה לפני השינה. שנת לילה איכותית = זיכרון חזק יותר למחרת.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="custom-card p-4 border-0 shadow-none bg-soft">
-                            <div class="fs-1 mb-3">☕</div>
-                            <h3 class="h5 fw-bold">הפסקות יעילות</h3>
-                            <p class="text-secondary-custom small">גלילה בטלפון היא לא מנוחה. קומו, מתחו איברים, שתו מים או צאו לנשום אוויר בחוץ.</p>
+                        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="כרטיס הפסקות יעילות - לחצו להפיכה">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front custom-card border-0 shadow-none bg-soft">
+                                    <div class="fs-1 mb-3">☕</div>
+                                    <h3 class="h5 fw-bold">הפסקות יעילות</h3>
+                                    <p class="text-secondary-custom small">גלילה בטלפון היא לא מנוחה. קומו, מתחו איברים, שתו מים או צאו לנשום אוויר בחוץ.</p>
+                                    <span class="flip-hint text-secondary-custom">לחצו לטיפ ←</span>
+                                </div>
+                                <div class="flip-card-back custom-card border-0 shadow-none bg-soft">
+                                    <h4>שיטת פומודורו 🍅</h4>
+                                    <p>25 דקות למידה ממוקדת + 5 דקות הפסקה אמיתית (תנועה, מים, אוויר). אחרי 4 מחזורים - הפסקה ארוכה של 20 דקות.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="custom-card p-4 border-0 shadow-none bg-soft">
-                            <div class="fs-1 mb-3">🔋</div>
-                            <h3 class="h5 fw-bold">זמן התאוששות</h3>
-                            <p class="text-secondary-custom small">חובה להגדיר ביום "זמן מת" שבו לא עושים שום דבר שקשור ללימודים, כדי להטעין את המצברים.</p>
+                        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="כרטיס זמן התאוששות - לחצו להפיכה">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front custom-card border-0 shadow-none bg-soft">
+                                    <div class="fs-1 mb-3">🔋</div>
+                                    <h3 class="h5 fw-bold">זמן התאוששות</h3>
+                                    <p class="text-secondary-custom small">חובה להגדיר ביום "זמן מת" שבו לא עושים שום דבר שקשור ללימודים, כדי להטעין את המצברים.</p>
+                                    <span class="flip-hint text-secondary-custom">לחצו לטיפ ←</span>
+                                </div>
+                                <div class="flip-card-back custom-card border-0 shadow-none bg-soft">
+                                    <h4>רעיונות לטעינה</h4>
+                                    <p>הליכה בטבע, מוזיקה אהובה, בישול, מקלחת חמה או שיחה עם חבר. בחרו פעילות אחת ביום שתעשה לכם טוב.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -154,41 +519,56 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <h2 class="fw-bold text-center mb-4">יצירת איזון בריא</h2>
-                        <div class="custom-card p-5">
-                            <h3 class="h5 fw-bold mb-4">גלגל האיזון - דברים שחשוב לשלב בשגרה:</h3>
-                            <div class="row g-3">
+                        <div class="custom-card p-5 balance-card">
+                            <h3 class="h5 fw-bold mb-2">גלגל האיזון - דברים שחשוב לשלב בשגרה:</h3>
+                            <p class="text-secondary-custom small mb-4">סמנו את הדברים שאתם כבר עושים השבוע 👇</p>
+                            <div class="row g-3" id="balanceList">
                                 <div class="col-sm-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="check1" checked disabled>
-                                        <label class="form-check-label text-secondary-custom" for="check1">
-                                            פעילות גופנית (אפילו 20 דקות ביום)
+                                    <div class="form-check balance-item">
+                                        <input class="form-check-input balance-check" type="checkbox" id="check1">
+                                        <label class="form-check-label" for="check1">
+                                            🏃 פעילות גופנית (אפילו 20 דקות ביום)
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="check2" checked disabled>
-                                        <label class="form-check-label text-secondary-custom" for="check2">
-                                            מפגש חברתי (לא סביב חומרי לימוד)
+                                    <div class="form-check balance-item">
+                                        <input class="form-check-input balance-check" type="checkbox" id="check2">
+                                        <label class="form-check-label" for="check2">
+                                            👥 מפגש חברתי (לא סביב חומרי לימוד)
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="check3" checked disabled>
-                                        <label class="form-check-label text-secondary-custom" for="check3">
-                                            תחביב אישי (קריאה, ציור, נגינה)
+                                    <div class="form-check balance-item">
+                                        <input class="form-check-input balance-check" type="checkbox" id="check3">
+                                        <label class="form-check-label" for="check3">
+                                            🎨 תחביב אישי (קריאה, ציור, נגינה)
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="check4" checked disabled>
-                                        <label class="form-check-label text-secondary-custom" for="check4">
-                                            ארוחות מסודרות
+                                    <div class="form-check balance-item">
+                                        <input class="form-check-input balance-check" type="checkbox" id="check4">
+                                        <label class="form-check-label" for="check4">
+                                            🍽️ ארוחות מסודרות
                                         </label>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="balance-meter mt-4 text-center">
+                                <h4 class="fw-bold mb-3 balance-title">רמת האיזון שלך</h4>
+                                <div class="balance-ring-wrapper">
+                                    <svg class="balance-ring" viewBox="0 0 160 160" aria-hidden="true">
+                                        <circle class="ring-track" cx="80" cy="80" r="68"></circle>
+                                        <circle id="balanceRing" class="ring-progress" cx="80" cy="80" r="68"></circle>
+                                    </svg>
+                                    <div class="balance-ring-text">
+                                        <span id="balanceCount">0</span><span class="ring-total">/4</span>
+                                    </div>
+                                </div>
+                                <p id="balanceMessage" class="mt-3 mb-0 fw-bold balance-message">בואו נתחיל - סמנו לפחות פעולה אחת! 💪</p>
                             </div>
                         </div>
                     </div>
@@ -239,5 +619,142 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.flip-card').forEach(card => {
+            const toggle = () => {
+                const flipped = card.classList.toggle('is-flipped');
+                card.setAttribute('aria-pressed', flipped);
+            };
+            card.addEventListener('click', toggle);
+            card.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggle();
+                }
+            });
+        });
+
+        const balanceChecks = document.querySelectorAll('.balance-check');
+        const balanceRing = document.getElementById('balanceRing');
+        const balanceCount = document.getElementById('balanceCount');
+        const balanceMessage = document.getElementById('balanceMessage');
+        const RING_CIRCUMFERENCE = 2 * Math.PI * 68;
+        const messages = [
+            { text: 'בואו נתחיל - סמנו לפחות פעולה אחת! 💪', color: '#6c757d', size: '1.6rem' },
+            { text: 'התחלה יפה! יש עוד לאן לשאוף 🌱', color: '#d97706', size: '1.8rem' },
+            { text: 'חצי דרך - אתם בכיוון הנכון! 👏', color: '#2563eb', size: '2rem' },
+            { text: 'כמעט שם, איזון יפהפה! 🌟', color: '#16a34a', size: '2.2rem' },
+            { text: 'מצוין! איזון מושלם בשגרה שלכם 🏆', color: '#15803d', size: '2.4rem' }
+        ];
+
+        balanceRing.style.strokeDasharray = RING_CIRCUMFERENCE;
+        balanceRing.style.strokeDashoffset = RING_CIRCUMFERENCE;
+
+        function updateBalance() {
+            const count = [...balanceChecks].filter(c => c.checked).length;
+            const fraction = count / balanceChecks.length;
+            balanceRing.style.strokeDashoffset = RING_CIRCUMFERENCE * (1 - fraction);
+            balanceRing.style.stroke = messages[count].color;
+            balanceCount.textContent = count;
+            balanceMessage.textContent = messages[count].text;
+            balanceMessage.style.color = messages[count].color;
+            balanceMessage.style.fontSize = messages[count].size;
+        }
+
+        balanceChecks.forEach(c => c.addEventListener('change', updateBalance));
+        updateBalance();
+
+        document.querySelectorAll('.brain-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.brain-item');
+                const open = item.getAttribute('data-open') === 'true';
+                item.setAttribute('data-open', !open);
+                btn.setAttribute('aria-expanded', !open);
+            });
+        });
+
+        const stressAnswers = [null, null, null];
+        const burnBar = document.getElementById('burnBar');
+        const focusBar = document.getElementById('focusBar');
+        const burnLabel = document.getElementById('burnLabel');
+        const focusLabel = document.getElementById('focusLabel');
+        const stressVerdict = document.getElementById('stressVerdict');
+        const stressReset = document.getElementById('stressReset');
+
+        function levelLabel(val, type) {
+            if (type === 'burn') {
+                if (val < 30) return 'נמוך';
+                if (val < 60) return 'בינוני';
+                if (val < 85) return 'גבוה';
+                return 'קריטי';
+            } else {
+                if (val < 30) return 'נמוך';
+                if (val < 60) return 'בינוני';
+                if (val < 85) return 'טוב';
+                return 'מצוין';
+            }
+        }
+
+        function getVerdict(burn, focus) {
+            if (burn < 35 && focus > 65) return { text: 'מצב מצוין! המשיכו ככה 🌟', color: '#15803d' };
+            if (burn < 60) return { text: 'מצב סביר - שמרו על איזון 🙂', color: '#2563eb' };
+            if (burn < 80) return { text: 'אתם בלחץ - הגיע הזמן להפסקה אמיתית ☕', color: '#d97706' };
+            return { text: 'שחיקה גבוהה! מומלץ לקחת יום מנוחה 🚨', color: '#dc2626' };
+        }
+
+        function updateStress() {
+            const answered = stressAnswers.filter(a => a !== null);
+            if (answered.length === 0) {
+                burnBar.style.width = '0%';
+                focusBar.style.width = '0%';
+                burnLabel.textContent = '-';
+                focusLabel.textContent = '-';
+                stressVerdict.textContent = 'ענו על השאלות כדי לראות את התוצאה ✨';
+                stressVerdict.style.color = '#6c757d';
+                stressReset.style.display = 'none';
+                return;
+            }
+            const avgBurn = Math.round(answered.reduce((s, a) => s + a.burn, 0) / answered.length);
+            const avgFocus = Math.round(answered.reduce((s, a) => s + a.focus, 0) / answered.length);
+            burnBar.style.width = avgBurn + '%';
+            burnBar.setAttribute('aria-valuenow', avgBurn);
+            focusBar.style.width = avgFocus + '%';
+            focusBar.setAttribute('aria-valuenow', avgFocus);
+            burnLabel.textContent = levelLabel(avgBurn, 'burn');
+            focusLabel.textContent = levelLabel(avgFocus, 'focus');
+
+            if (answered.length < 3) {
+                stressVerdict.textContent = `ענו על עוד ${3 - answered.length} שאלות לתוצאה מלאה...`;
+                stressVerdict.style.color = '#6c757d';
+                stressReset.style.display = 'none';
+            } else {
+                const v = getVerdict(avgBurn, avgFocus);
+                stressVerdict.textContent = v.text;
+                stressVerdict.style.color = v.color;
+                stressReset.style.display = 'inline-block';
+            }
+        }
+
+        document.querySelectorAll('.stress-question').forEach(q => {
+            const qIndex = parseInt(q.dataset.question);
+            q.querySelectorAll('.stress-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    q.querySelectorAll('.stress-btn').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                    stressAnswers[qIndex] = {
+                        burn: parseInt(btn.dataset.burn),
+                        focus: parseInt(btn.dataset.focus)
+                    };
+                    updateStress();
+                });
+            });
+        });
+
+        stressReset.addEventListener('click', () => {
+            stressAnswers.fill(null);
+            document.querySelectorAll('.stress-btn.selected').forEach(b => b.classList.remove('selected'));
+            updateStress();
+        });
+    </script>
 </body>
 </html>
