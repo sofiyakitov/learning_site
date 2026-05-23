@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -102,7 +103,7 @@
                 </div>
             </div>
         </section>
-
+        
         <section class="py-5">
             <div class="container">
                 <div class="row mb-5">
@@ -214,7 +215,93 @@
                     </div>
                 </div>
 
-                <div class="row g-4">
+                <section class="additional-techniques-section mt-5">
+                    <div class="text-center mb-4">
+                        <h3 class="fw-bold">טכניקות נוספות</h3>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <button type="button" class="custom-card technique-card card-peach" data-technique-modal data-technique-key="tasks" data-title="רשימת משימות חכמה" data-description="פרקו מטלות גדולות לתת-משימות קטנות וברורות שניתן לסיים ב-30 דקות או פחות.">
+                                <span class="technique-card-icon" aria-hidden="true">📝</span>
+                                <span class="technique-card-title">רשימת משימות חכמה</span>
+                                <span class="technique-card-text">פרקו מטלות גדולות לצעדים קטנים וברורים.</span>
+                            </button>
+                        </div>
+
+                        <div class="col-md-6">
+                            <button type="button" class="custom-card technique-card card-lavender" data-technique-modal data-technique-key="time-blocks" data-title="בלוקים של זמן" data-description="שריינו ביומן פגישות עם עצמכם המוקדשות ללמידה בלבד, ללא הסחות דעת.">
+                                <span class="technique-card-icon" aria-hidden="true">📅</span>
+                                <span class="technique-card-title">בלוקים של זמן</span>
+                                <span class="technique-card-text">הפכו זמן למידה לפגישה קבועה ביומן.</span>
+                            </button>
+                        </div>
+
+                        <div class="col-md-6">
+                            <button type="button" class="custom-card technique-card card-pink" data-technique-modal data-technique-key="priorities" data-title="קביעת סדרי עדיפויות" data-description="השתמשו במטריצת אייזנהאואר וטפלו קודם במשימות החשובות והדחופות ביותר.">
+                                <span class="technique-card-icon" aria-hidden="true">🥇</span>
+                                <span class="technique-card-title">קביעת סדרי עדיפויות</span>
+                                <span class="technique-card-text">בחרו מה חשוב באמת לפני שמתחילים לעבוד.</span>
+                            </button>
+                        </div>
+
+                        <div class="col-md-6">
+                            <button type="button" class="custom-card technique-card card-cream" data-technique-modal data-technique-key="habit-tracker" data-title="בניית הרגלי למידה" data-description="עקביות מנצחת אינטנסיביות. במקום ללמוד שעות ברצף, בנו הרגלים יומיומיים קטנים.">
+                                <span class="technique-card-icon" aria-hidden="true">✅</span>
+                                <span class="technique-card-title">בניית הרגלי למידה</span>
+                                <span class="technique-card-text">עקבו אחרי הרגלים קטנים ושמרו על רצף.</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="technique-overlay" id="techniqueOverlay" aria-hidden="true">
+                    <div class="technique-modal" role="dialog" aria-modal="true" aria-labelledby="techniqueModalTitle">
+                        <button type="button" class="technique-modal-close" aria-label="סגירת חלון">X</button>
+                        <h3 id="techniqueModalTitle" class="technique-modal-title"></h3>
+                        <p class="technique-modal-description"></p>
+                        <div class="card-illustration-placeholder"></div>
+                    </div>
+                </div>
+                <template id="habit-tracker-template">
+                    <div class="habit-tracker-modal-content">
+                        <h4 class="text-start mb-3 fs-5 fw-bold">מעקב הרגלים שבועי (דוגמה)</h4>
+                        <div class="table-responsive">
+                            <table class="table table-borderless text-start align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>הרגל</th>
+                                        <th>א'</th>
+                                        <th>ב'</th>
+                                        <th>ג'</th>
+                                        <th>ד'</th>
+                                        <th>ה'</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>קריאת חומר רקע (30 דק')</td>
+                                        <td><span class="badge bg-success rounded-circle p-2">V</span></td>
+                                        <td><span class="badge bg-success rounded-circle p-2">V</span></td>
+                                        <td><span class="badge bg-light text-muted rounded-circle p-2">-</span></td>
+                                        <td><span class="badge bg-success rounded-circle p-2">V</span></td>
+                                        <td><span class="badge bg-light text-muted rounded-circle p-2">-</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>תרגול מתמטיקה</td>
+                                        <td><span class="badge bg-light text-muted rounded-circle p-2">-</span></td>
+                                        <td><span class="badge bg-success rounded-circle p-2">V</span></td>
+                                        <td><span class="badge bg-success rounded-circle p-2">V</span></td>
+                                        <td><span class="badge bg-light text-muted rounded-circle p-2">-</span></td>
+                                        <td><span class="badge bg-success rounded-circle p-2">V</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </template>
+
+                <div class="row g-4 d-none" aria-hidden="true">
                     <div class="col-md-4">
                         <div class="custom-card p-4 text-center">
                             <div class="fs-1 mb-3" aria-hidden="true">📝</div>
@@ -240,7 +327,7 @@
             </div>
         </section>
         
-        <section class="py-5">
+        <section class="py-5 d-none" aria-hidden="true">
             <div class="container">
                 <div class="row justify-content-center text-center">
                     <div class="col-lg-8">

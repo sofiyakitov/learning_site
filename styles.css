@@ -1944,6 +1944,115 @@ a:focus {
   background: var(--bright-pink);
 }
 
+.additional-techniques-section {
+  margin-top: 4rem;
+}
+
+.technique-card {
+  width: 100%;
+  min-height: 220px;
+  padding: 2rem;
+  text-align: right;
+  border: 3px solid var(--dark-text) !important;
+  background: var(--cream-bg);
+  color: var(--dark-text);
+  cursor: pointer;
+}
+
+.technique-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--dark-text) !important;
+}
+
+.technique-card-icon {
+  display: block;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.technique-card-title {
+  display: block;
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+}
+
+.technique-card-text {
+  display: block;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.technique-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgba(30, 30, 30, 0.55);
+  backdrop-filter: blur(8px);
+}
+
+.technique-overlay.active {
+  display: flex;
+}
+
+.technique-modal {
+  position: relative;
+  width: min(960px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 2rem;
+  border: 4px solid var(--dark-text);
+  border-radius: 24px;
+  background: var(--cream-bg);
+  box-shadow: 10px 10px 0 var(--dark-text);
+}
+
+.technique-modal-close {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 42px;
+  height: 42px;
+  border: 3px solid var(--dark-text);
+  border-radius: 50%;
+  background: var(--bright-pink);
+  color: var(--dark-text);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.technique-modal-title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  padding-left: 3rem;
+}
+
+.technique-modal-description {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.card-illustration-placeholder {
+  min-height: 360px;
+  padding: 1.5rem;
+  border: 3px dashed rgba(30, 30, 30, 0.35);
+  border-radius: 20px;
+  background: rgba(255, 214, 201, 0.35);
+}
+
+.technique-placeholder-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
 @media (max-width: 575.98px) {
   .pomodoro-mode-tabs {
     flex-direction: column;
@@ -1962,6 +2071,18 @@ a:focus {
     right: 0.75rem;
     left: 0.75rem;
     justify-content: center;
+  }
+
+  .technique-modal {
+    padding: 1.25rem;
+  }
+
+  .technique-modal-title {
+    font-size: 1.55rem;
+  }
+
+  .card-illustration-placeholder {
+    min-height: 240px;
   }
 }
 

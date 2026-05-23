@@ -139,6 +139,59 @@ document.addEventListener("DOMContentLoaded", () => {
         resetBtn.addEventListener("click", resetTimer);
     }
 
+    // Additional techniques overlay cards
+    const techniqueCards = document.querySelectorAll("[data-technique-modal]");
+    const techniqueOverlay = document.getElementById("techniqueOverlay");
+
+    if (techniqueCards.length && techniqueOverlay) {
+        const modalTitle = techniqueOverlay.querySelector(".technique-modal-title");
+        const modalDescription = techniqueOverlay.querySelector(".technique-modal-description");
+        const modalPlaceholder = techniqueOverlay.querySelector(".card-illustration-placeholder");
+        const closeButton = techniqueOverlay.querySelector(".technique-modal-close");
+        const habitTemplate = document.getElementById("habit-tracker-template");
+ 
+
+        function closeTechniqueModal() {
+            techniqueOverlay.classList.remove("active");
+            techniqueOverlay.setAttribute("aria-hidden", "true");
+            modalPlaceholder.innerHTML = "";
+ 
+        }
+
+        techniqueCards.forEach((card) => {
+            card.addEventListener("click", () => {
+                modalTitle.textContent = card.dataset.title;
+                modalDescription.textContent = card.dataset.description;
+                modalPlaceholder.innerHTML = "";
+ 
+                if (card.dataset.techniqueKey === "habit-tracker" && habitTemplate) {
+                
+                } else {
+                    modalPlaceholder.innerHTML = '<div class="technique-placeholder-note text-center fw-bold text-secondary-custom">אזור שמור לאיור או תמונה עתידית</div>';
+                }
+
+                techniqueOverlay.classList.add("active");
+                techniqueOverlay.setAttribute("aria-hidden", "false");
+                closeButton.focus();
+            });
+        });
+
+        closeButton.addEventListener("click", closeTechniqueModal);
+
+        techniqueOverlay.addEventListener("click", (event) => {
+            if (event.target === techniqueOverlay) {
+                closeTechniqueModal();
+            }
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && techniqueOverlay.classList.contains("active")) {
+                closeTechniqueModal();
+            }
+        });
+    }
+
+
     // Contact Form Validation
     const contactForm = document.getElementById("contactForm");
     if (contactForm) {
