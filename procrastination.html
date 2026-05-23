@@ -177,20 +177,39 @@
                 <p class="text-secondary-custom">הנה כמה שיטות מוכחות להתמודדות עם דחיינות</p>
             </div>
             <div class="container">
-                <div class="row align-items-center mb-5">
-                    <div class="col-md-6 mb-4 mb-md-0">
+                <div class="row align-items-center mb-5 pomodoro-section-row">
+                    <div class="col-md-5 mb-4 mb-md-0 pomodoro-copy">
                         <h3 class="fw-bold h4">שיטת פומודורו (Pomodoro)</h3>
                         <p class="text-secondary-custom mb-4">
                             למידה במקטעים קצרים וממוקדים של 25 דקות, שלאחריהם 5 דקות הפסקה. השיטה מפחיתה שחיקה ושומרת על מיקוד. נסו בעצמכם:
                         </p>
-                        <div class="d-flex gap-3">
-                            <button id="start-timer-btn" class="btn btn-primary">התחל למידה (25 דק')</button>
-                            <button id="reset-timer-btn" class="btn btn-outline-secondary rounded-pill px-4">איפוס</button>
-                        </div>
                     </div>
-                    <div class="col-md-6 text-center">
-                        <div class="custom-card p-5 d-inline-block shadow-lg">
+                    <div class="col-md-7 text-center pomodoro-card-col">
+                        <div class="custom-card pomodoro-card p-4 p-md-5 d-inline-block shadow-lg">
+                            <div class="pomodoro-mode-tabs" role="tablist" aria-label="בחירת מצב טיימר">
+                                <button type="button" class="pomodoro-mode-btn active" data-duration="25" data-mode="study" aria-pressed="true">
+                                    <span>למידה</span>
+                                    <small>25 דק'</small>
+                                </button>
+                                <button type="button" class="pomodoro-mode-btn" data-duration="5" data-mode="short-break" aria-pressed="false">
+                                    <span>הפסקה קצרה</span>
+                                    <small>5 דק'</small>
+                                </button>
+                                <button type="button" class="pomodoro-mode-btn" data-duration="15" data-mode="long-break" aria-pressed="false">
+                                    <span>הפסקה ארוכה</span>
+                                    <small>15 דק'</small>
+                                </button>
+                            </div>
                             <div id="pomodoro-timer" class="display-1 fw-bold text-dark" aria-live="polite">25:00</div>
+                            <div class="pomodoro-actions" aria-label="פקדי טיימר">
+                                <button id="start-timer-btn" type="button" class="pomodoro-action-btn pomodoro-start-btn">Start</button>
+                                <button id="reset-timer-btn" type="button" class="pomodoro-action-btn pomodoro-icon-btn repeat-timer-btn" aria-label="איפוס טיימר">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M3 12a9 9 0 1 0 3-6.7"/>
+                                        <path d="M3 4v6h6"/>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
