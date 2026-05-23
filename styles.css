@@ -2034,6 +2034,7 @@ main section.hero-section[style*="background-color"] {
 /* Image floating wrapper */
 .subpage-hero-img-wrapper {
   position: relative;
+  display: inline-block;
   z-index: 3;
   width: 100%;
   animation: subpage-image-float 6s ease-in-out infinite;
@@ -2050,6 +2051,89 @@ main section.hero-section[style*="background-color"] {
   box-shadow: 0 15px 35px rgba(30, 30, 30, 0.1), 8px 8px 0px var(--dark-text) !important;
   background-color: var(--cream-bg);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.procrastination-hero-image-container .subpage-hero-img {
+  display: block;
+}
+
+.procrastination-hero-image-container .hero-live-text-bubble {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.45rem 1rem;
+  border: 2px solid rgba(30, 30, 30, 0.14);
+  border-radius: 22px;
+  box-shadow: 0 8px 18px rgba(30, 30, 30, 0.16);
+  color: var(--dark-text);
+  font-family: 'Heebo', 'Assistant', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0;
+  text-align: center;
+  direction: ltr;
+  cursor: pointer;
+  transform-origin: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.procrastination-hero-image-container .hero-live-text-bubble:hover {
+  transform: scale(1.08);
+  box-shadow: 0 14px 28px rgba(30, 30, 30, 0.22);
+}
+
+.procrastination-hero-image-container .hero-notification-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  margin-right: 0.55rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+}
+
+.procrastination-hero-image-container .hero-notification-icon {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+@media (min-width: 992px) {
+  .procrastination-hero-image-container .hero-live-text-bubble {
+    font-size: 0.9rem;
+  }
+}
+
+.procrastination-hero-image-container .hero-live-text-project {
+  top: 9%;
+  left: 11%;
+  width: 28%;
+  background-color: #dba096;
+}
+
+.procrastination-hero-image-container .hero-live-text-email {
+  top: 28%;
+  left: 7%;
+  width: 22%;
+  background-color: #bfd8dd;
+}
+
+.procrastination-hero-image-container .hero-live-text-reminder {
+  top: 49%;
+  right: 4%;
+  width: 31%;
+  background-color: #e2bd65;
 }
 
 .subpage-hero-image-container:hover .subpage-hero-img {
