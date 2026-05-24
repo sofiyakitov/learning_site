@@ -49,7 +49,6 @@
   justify-content: center;
   z-index: 2;
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
-  cursor: pointer;
   user-select: none;
   font-family: inherit;
 }
