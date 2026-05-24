@@ -17,311 +17,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
         integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .phone-mockup {
-            border: 12px solid #333;
-            border-radius: 36px;
-            height: 400px;
-            width: 220px;
-            margin: 0 auto;
-            position: relative;
-            background-color: #fff;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .phone-notification {
-            background: #f8d7da;
-            color: #842029;
-            padding: 10px;
-            border-radius: 8px;
-            margin: 10px;
-            font-size: 0.8rem;
-            animation: slideDown 2s infinite alternate;
-        }
-
-        @keyframes slideDown {
-            0% {
-                transform: translateY(-20px);
-                opacity: 0;
-            }
-
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Modern Educational Slide Styles */
-        .edu-slide-container {
-            padding: 40px 15px;
-            background: transparent;
-        }
-
-        .edu-slide {
-            position: relative;
-            width: 100%;
-            max-width: 1200px;
-            aspect-ratio: 16 / 9;
-            margin: 0 auto;
-            background: #ffffff;
-            border-radius: 24px;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-            display: flex;
-            overflow: hidden;
-            direction: rtl;
-        }
-
-        @media (max-width: 991px) {
-            .edu-slide {
-                aspect-ratio: auto;
-                flex-direction: column;
-            }
-        }
-
-        .edu-slide-half {
-            flex: 1;
-            position: relative;
-            padding: 3rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .edu-slide-half.before {
-            background: linear-gradient(145deg, #fff5f5 0%, #ffffff 100%);
-            border-left: 2px dashed rgba(0, 0, 0, 0.05);
-        }
-
-        .edu-slide-half.after {
-            background: linear-gradient(145deg, #f0fff4 0%, #ffffff 100%);
-        }
-
-        .edu-slide-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 3rem;
-            text-align: center;
-            z-index: 2;
-            font-family: 'Heebo', sans-serif;
-        }
-
-        .edu-slide-title.before-title {
-            color: #dc3545;
-        }
-
-        .edu-slide-title.after-title {
-            color: #198754;
-        }
-
-        .edu-slide-image-container {
-            position: relative;
-            width: 100%;
-            max-width: 320px;
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .edu-slide-img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            position: relative;
-            z-index: 1;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .slide-callout {
-            position: absolute;
-            background: white;
-            padding: 12px 18px;
-            border-radius: 12px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-            z-index: 3;
-            max-width: 190px;
-            text-align: center;
-            line-height: 1.4;
-        }
-
-        .slide-callout::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 0;
-            border: 8px solid transparent;
-        }
-
-        .slide-callout.red-accent {
-            border: 2px solid #dc3545;
-            color: #dc3545;
-        }
-
-        .slide-callout.green-accent {
-            border: 2px solid #198754;
-            color: #198754;
-        }
-
-        /* Positioning Callouts - Bad Environment */
-        .callout-bad-1 {
-            top: -15%;
-            right: -25%;
-        }
-
-        .callout-bad-1::after {
-            border-top-color: #dc3545;
-            bottom: -16px;
-            left: 30px;
-        }
-
-        .callout-bad-2 {
-            top: 35%;
-            right: -35%;
-        }
-
-        .callout-bad-2::after {
-            border-right-color: #dc3545;
-            left: -16px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .callout-bad-3 {
-            bottom: -15%;
-            left: -5%;
-        }
-
-        .callout-bad-3::after {
-            border-bottom-color: #dc3545;
-            top: -16px;
-            right: 30px;
-        }
-
-        .callout-bad-4 {
-            top: 15%;
-            left: -30%;
-        }
-
-        .callout-bad-4::after {
-            border-left-color: #dc3545;
-            right: -16px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        /* Positioning Callouts - Good Environment */
-        .callout-good-1 {
-            top: -15%;
-            right: -20%;
-        }
-
-        .callout-good-1::after {
-            border-top-color: #198754;
-            bottom: -16px;
-            left: 30px;
-        }
-
-        .callout-good-2 {
-            top: 35%;
-            right: -30%;
-        }
-
-        .callout-good-2::after {
-            border-right-color: #198754;
-            left: -16px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .callout-good-3 {
-            bottom: -15%;
-            left: 5%;
-        }
-
-        .callout-good-3::after {
-            border-bottom-color: #198754;
-            top: -16px;
-            right: 30px;
-        }
-
-        .callout-good-4 {
-            top: 15%;
-            left: -25%;
-        }
-
-        .callout-good-4::after {
-            border-left-color: #198754;
-            right: -16px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        @media (max-width: 1200px) {
-            .slide-callout {
-                font-size: 0.85rem;
-                padding: 10px 14px;
-                max-width: 150px;
-            }
-
-            .callout-bad-1 {
-                right: -15%;
-            }
-
-            .callout-bad-2 {
-                right: -20%;
-            }
-
-            .callout-bad-4 {
-                left: -15%;
-            }
-
-            .callout-good-1 {
-                right: -10%;
-            }
-
-            .callout-good-2 {
-                right: -15%;
-            }
-
-            .callout-good-4 {
-                left: -10%;
-            }
-        }
-
-        @media (max-width: 991px) {
-            .slide-callout {
-                position: relative;
-                top: auto !important;
-                bottom: auto !important;
-                left: auto !important;
-                right: auto !important;
-                margin: 12px auto;
-                max-width: 90%;
-                width: 100%;
-                display: block;
-            }
-
-            .slide-callout::after {
-                display: none;
-            }
-
-            .edu-slide-image-container {
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 2rem;
-                max-width: 400px;
-            }
-
-            .edu-slide-img {
-                margin-bottom: 1.5rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -333,8 +28,7 @@
                 <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
                     <img src="assets/images/favicon_logo_1779007637509.png" alt="לוגו FocusPLUS" width="40" height="40"
                         class="rounded-circle">
-                    <span class="fw-bold text-dark fs-4" style="font-family: 'Heebo', sans-serif;">Focus<span
-                            style="color: purple;">PLUS</span></span>
+                    <span class="fw-bold text-dark fs-4">Focus<span class="brand-plus">PLUS</span></span>
                 </a>
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="החלף ניווט">
@@ -442,8 +136,8 @@
                         <div class="phone-mockup">
                             <div class="mt-4"></div>
                             <div class="phone-notification">הודעה חדשה מאינסטגרם!</div>
-                            <div class="phone-notification" style="animation-delay: 0.5s;">מישהו הגיב לתמונה שלך</div>
-                            <div class="phone-notification" style="animation-delay: 1s;">סרטון חדש בטיקטוק</div>
+                            <div class="phone-notification phone-notif-d1">מישהו הגיב לתמונה שלך</div>
+                            <div class="phone-notification phone-notif-d2">סרטון חדש בטיקטוק</div>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -528,7 +222,7 @@
                     <div class="col-md-4">
                         <div class="custom-card p-4 h-100">
                             <div class="mb-3"><img src="assets/images/icons/headphones.png" alt="" width="40"
-                                    height="40" style="object-fit:contain;"></div>
+                                    height="40" class="icon-img"></div>
                             <h4 class="fw-bold h5">מוזיקת ריכוז</h4>
                             <p class="text-secondary-custom small">האזנה לתדרים נמוכים (Lo-Fi), מוזיקה קלאסית או "רעש
                                 לבן" עוזרת למסך רעשי רקע ולהיכנס ל-Flow.</p>
@@ -537,7 +231,7 @@
                     <div class="col-md-4">
                         <div class="custom-card p-4 h-100">
                             <div class="mb-3"><img src="assets/images/icons/stop2.png" alt="" width="40" height="40"
-                                    style="object-fit:contain;"></div>
+                                    class="icon-img"></div>
                             <h4 class="fw-bold h5">חוסמי אתרים (Blockers)</h4>
                             <p class="text-secondary-custom small">השתמשו בתוספים לדפדפן (כמו Cold Turkey או Forest)
                                 שחוסמים גישה לרשתות חברתיות בזמן הלמידה.</p>
@@ -546,7 +240,7 @@
                     <div class="col-md-4">
                         <div class="custom-card p-4 h-100">
                             <div class="mb-3"><img src="assets/images/icons/yoga.png" alt="" width="40" height="40"
-                                    style="object-fit:contain;"></div>
+                                    class="icon-img"></div>
                             <h4 class="fw-bold h5">הכנה מנטלית</h4>
                             <p class="text-secondary-custom small">לפני תחילת הלמידה, קחו דקה לנשימות עמוקות וסדרו את
                                 המחשבות. זה מאותת למוח שהגיע הזמן להתמקד.</p>
@@ -564,9 +258,7 @@
                     <a class="d-flex align-items-center gap-2 text-decoration-none footer-brand" href="index.html">
                         <img src="assets/images/favicon_logo_1779007637509.png" alt="לוגו FocusPLUS" width="30"
                             height="30" class="rounded-circle footer-logo">
-                        <span class="fw-bold text-dark fs-6 footer-brand-text"
-                            style="font-family: 'Heebo', sans-serif;">Focus<span
-                                style="color: purple;">PLUS</span></span>
+                        <span class="fw-bold text-dark fs-6 footer-brand-text">Focus<span class="brand-plus">PLUS</span></span>
                     </a>
                     <p class="text-secondary-custom small footer-desc mb-0">פורטל לסטודנטים שמחבר בין ריכוז, זמן וניהול
                         עומס אקדמי.</p>
