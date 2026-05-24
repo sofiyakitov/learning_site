@@ -2577,7 +2577,7 @@ main section.hero-section[style*="background-color"] {
 .tasks-diagram-container {
   position: relative;
   width: 100%;
-  max-width: 750px;
+  max-width: 620px;
   margin: 1rem auto 0;
   aspect-ratio: 1.5; /* 600x400 ratio */
   background: #f0f4f8;
@@ -2602,17 +2602,9 @@ main section.hero-section[style*="background-color"] {
 
 .tasks-diagram-svg path {
   stroke: var(--dark-text);
-  stroke-width: 3;
+  stroke-width: 3.5;
   fill: none;
   stroke-linecap: round;
-  stroke-dasharray: 8 8;
-  animation: dash 35s linear infinite;
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: -1000;
-  }
 }
 
 .tasks-diagram-card {
@@ -2622,16 +2614,10 @@ main section.hero-section[style*="background-color"] {
   box-shadow: 4px 4px 0px var(--dark-text) !important;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 0 12px;
+  justify-content: center;
+  padding: 0 8px;
   z-index: 2;
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
   direction: rtl;
-}
-
-.tasks-diagram-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px var(--dark-text) !important;
 }
 
 .tasks-diagram-card .card-text {
@@ -2639,37 +2625,11 @@ main section.hero-section[style*="background-color"] {
   color: var(--dark-text);
   font-size: clamp(0.75rem, 2.8cqw, 1.05rem);
   margin: 0;
-  padding-right: 32px; /* space for badge */
-  text-align: right;
+  text-align: center;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-/* Badges on left cards (placed on the right side) */
-.tasks-diagram-card .card-badge {
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  border: 2px solid var(--dark-text);
-  border-radius: 50%;
-  background: #fbf9f1; /* cream */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 1px 1px 0px var(--dark-text);
-}
-
-.tasks-diagram-card .card-badge svg {
-  width: 12px;
-  height: 12px;
-  fill: none;
-  stroke: var(--dark-text);
-  stroke-width: 2.5;
 }
 
 /* Left side cards placement */
@@ -2698,15 +2658,9 @@ main section.hero-section[style*="background-color"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 24px 16px;
   z-index: 2;
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
-}
-
-.tasks-card-right:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0px var(--dark-text) !important;
 }
 
 .tasks-card-right .right-card-text {
@@ -2714,68 +2668,9 @@ main section.hero-section[style*="background-color"] {
   color: var(--dark-text);
   font-size: clamp(0.9rem, 3.5cqw, 1.25rem);
   text-align: center;
-  margin: auto 0;
+  margin: 0;
   direction: rtl;
   line-height: 1.4;
-}
-
-.tasks-card-right .right-card-badge {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 28px;
-  height: 28px;
-  border: 2px solid var(--dark-text);
-  border-radius: 50%;
-  background: #fbf9f1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 1.5px 1.5px 0px var(--dark-text);
-}
-
-.tasks-card-right .right-card-badge svg {
-  width: 14px;
-  height: 14px;
-  fill: none;
-  stroke: var(--dark-text);
-  stroke-width: 2.5;
-}
-
-.tasks-card-right .right-card-btn {
-  width: 36px;
-  height: 36px;
-  border: 2px solid var(--dark-text);
-  border-radius: 8px;
-  background: #fbf9f1;
-  box-shadow: 2px 2px 0px var(--dark-text);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
-  margin-bottom: 8px;
-}
-
-.tasks-card-right .right-card-btn:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0px var(--dark-text);
-}
-
-.tasks-card-right .right-card-btn svg {
-  width: 16px;
-  height: 16px;
-  fill: none;
-  stroke: var(--dark-text);
-  stroke-width: 3;
-}
-
-.tasks-card-right .right-card-shadow-pill {
-  width: 60px;
-  height: 16px;
-  border: 2px solid var(--dark-text);
-  border-radius: 10px;
-  background: rgba(30, 30, 30, 0.15);
 }
 
 /* Responsive adjustment for mobile screens */
