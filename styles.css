@@ -1528,6 +1528,20 @@ a:focus {
   margin: 0;
 }
 
+/* Developer Credits Styling */
+.footer-credits {
+  background-color: var(--deep-purple);
+  padding: 16px 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--dark-text);
+  line-height: 1.4;
+}
+
 .footer-bottom {
   margin-top: 0.75rem;
   padding-top: 0.75rem;
