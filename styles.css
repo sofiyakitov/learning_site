@@ -1224,6 +1224,38 @@ a:focus {
   z-index: 5;
 }
 
+/* Read More Button */
+.read-more-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.6rem;
+  background-color: transparent;
+  color: var(--cream-bg);
+  border: 2px solid var(--dark-text);
+  border-radius: 10px;
+  font-family: 'Space Grotesk', 'Assistant', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 4px 4px 0px var(--dark-text);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  text-align: center;
+}
+
+.read-more-btn:hover,
+.read-more-btn:focus {
+  color: var(--dark-text);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--dark-text);
+  text-decoration: none;
+}
+
+.read-more-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px var(--dark-text);
+}
+
 /* Section 3 Focus Info Card */
 .focus-info-card {
   background-color: var(--cream-bg);
