@@ -779,7 +779,6 @@ a:focus {
   display: flex;
   align-items: center;
   gap: 10px;
-  pointer-events: none;
   transition: all 0.3s ease;
 }
 
