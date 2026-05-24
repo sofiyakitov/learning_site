@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="התמודדות עם הסחות דעת וסביבת למידה אפקטיבית.">
     <title>FocusPLUS | הסחות דעת וסביבת למידה</title>
     <link rel="icon" type="image/png" href="assets/images/favicon_logo_1779007637509.png">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Heebo:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <style>
         .phone-mockup {
@@ -23,8 +27,9 @@
             position: relative;
             background-color: #fff;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
+
         .phone-notification {
             background: #f8d7da;
             color: #842029;
@@ -34,12 +39,291 @@
             font-size: 0.8rem;
             animation: slideDown 2s infinite alternate;
         }
+
         @keyframes slideDown {
-            0% { transform: translateY(-20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Modern Educational Slide Styles */
+        .edu-slide-container {
+            padding: 40px 15px;
+            background: transparent;
+        }
+
+        .edu-slide {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            aspect-ratio: 16 / 9;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            display: flex;
+            overflow: hidden;
+            direction: rtl;
+        }
+
+        @media (max-width: 991px) {
+            .edu-slide {
+                aspect-ratio: auto;
+                flex-direction: column;
+            }
+        }
+
+        .edu-slide-half {
+            flex: 1;
+            position: relative;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .edu-slide-half.before {
+            background: linear-gradient(145deg, #fff5f5 0%, #ffffff 100%);
+            border-left: 2px dashed rgba(0, 0, 0, 0.05);
+        }
+
+        .edu-slide-half.after {
+            background: linear-gradient(145deg, #f0fff4 0%, #ffffff 100%);
+        }
+
+        .edu-slide-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            text-align: center;
+            z-index: 2;
+            font-family: 'Heebo', sans-serif;
+        }
+
+        .edu-slide-title.before-title {
+            color: #dc3545;
+        }
+
+        .edu-slide-title.after-title {
+            color: #198754;
+        }
+
+        .edu-slide-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .edu-slide-img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            position: relative;
+            z-index: 1;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide-callout {
+            position: absolute;
+            background: white;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            z-index: 3;
+            max-width: 190px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .slide-callout::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+        }
+
+        .slide-callout.red-accent {
+            border: 2px solid #dc3545;
+            color: #dc3545;
+        }
+
+        .slide-callout.green-accent {
+            border: 2px solid #198754;
+            color: #198754;
+        }
+
+        /* Positioning Callouts - Bad Environment */
+        .callout-bad-1 {
+            top: -15%;
+            right: -25%;
+        }
+
+        .callout-bad-1::after {
+            border-top-color: #dc3545;
+            bottom: -16px;
+            left: 30px;
+        }
+
+        .callout-bad-2 {
+            top: 35%;
+            right: -35%;
+        }
+
+        .callout-bad-2::after {
+            border-right-color: #dc3545;
+            left: -16px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .callout-bad-3 {
+            bottom: -15%;
+            left: -5%;
+        }
+
+        .callout-bad-3::after {
+            border-bottom-color: #dc3545;
+            top: -16px;
+            right: 30px;
+        }
+
+        .callout-bad-4 {
+            top: 15%;
+            left: -30%;
+        }
+
+        .callout-bad-4::after {
+            border-left-color: #dc3545;
+            right: -16px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Positioning Callouts - Good Environment */
+        .callout-good-1 {
+            top: -15%;
+            right: -20%;
+        }
+
+        .callout-good-1::after {
+            border-top-color: #198754;
+            bottom: -16px;
+            left: 30px;
+        }
+
+        .callout-good-2 {
+            top: 35%;
+            right: -30%;
+        }
+
+        .callout-good-2::after {
+            border-right-color: #198754;
+            left: -16px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .callout-good-3 {
+            bottom: -15%;
+            left: 5%;
+        }
+
+        .callout-good-3::after {
+            border-bottom-color: #198754;
+            top: -16px;
+            right: 30px;
+        }
+
+        .callout-good-4 {
+            top: 15%;
+            left: -25%;
+        }
+
+        .callout-good-4::after {
+            border-left-color: #198754;
+            right: -16px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @media (max-width: 1200px) {
+            .slide-callout {
+                font-size: 0.85rem;
+                padding: 10px 14px;
+                max-width: 150px;
+            }
+
+            .callout-bad-1 {
+                right: -15%;
+            }
+
+            .callout-bad-2 {
+                right: -20%;
+            }
+
+            .callout-bad-4 {
+                left: -15%;
+            }
+
+            .callout-good-1 {
+                right: -10%;
+            }
+
+            .callout-good-2 {
+                right: -15%;
+            }
+
+            .callout-good-4 {
+                left: -10%;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .slide-callout {
+                position: relative;
+                top: auto !important;
+                bottom: auto !important;
+                left: auto !important;
+                right: auto !important;
+                margin: 12px auto;
+                max-width: 90%;
+                width: 100%;
+                display: block;
+            }
+
+            .slide-callout::after {
+                display: none;
+            }
+
+            .edu-slide-image-container {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 2rem;
+                max-width: 400px;
+            }
+
+            .edu-slide-img {
+                margin-bottom: 1.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <a href="#main-content" class="visually-hidden-focusable">דלג לתוכן המרכזי</a>
 
@@ -47,10 +331,13 @@
         <nav class="navbar navbar-expand-lg py-3" aria-label="ניווט ראשי">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                    <img src="assets/images/favicon_logo_1779007637509.png" alt="לוגו FocusPLUS" width="40" height="40" class="rounded-circle">
-                    <span class="fw-bold text-dark fs-4" style="font-family: 'Poppins', sans-serif;">Focus<span style="color: purple;">PLUS</span></span>
+                    <img src="assets/images/favicon_logo_1779007637509.png" alt="לוגו FocusPLUS" width="40" height="40"
+                        class="rounded-circle">
+                    <span class="fw-bold text-dark fs-4" style="font-family: 'Poppins', sans-serif;">Focus<span
+                            style="color: purple;">PLUS</span></span>
                 </a>
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="החלף ניווט">
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="החלף ניווט">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mainNav">
@@ -58,7 +345,8 @@
                         <li class="nav-item"><a class="nav-link" href="index.html">ראשי</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">אודות</a></li>
                         <li class="nav-item"><a class="nav-link" href="procrastination.html">דחיינות</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="distractions.html">הסחות דעת</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                href="distractions.html">הסחות דעת</a></li>
                         <li class="nav-item"><a class="nav-link" href="stress.html">לחץ ומנוחה</a></li>
                         <li class="nav-item"><a class="nav-link" href="contactUs.html">צור קשר</a></li>
                     </ul>
@@ -81,13 +369,14 @@
             <!-- Decorative Background Blobs -->
             <div class="decorative-blob blob-1" aria-hidden="true"></div>
             <div class="decorative-blob blob-2" aria-hidden="true"></div>
-            
+
             <div class="container position-relative z-2">
                 <div class="subpage-hero-row">
                     <div class="subpage-hero-text">
                         <h1 class="display-5 fw-bold mb-3">הסחות דעת וסביבת למידה</h1>
                         <p class="lead text-secondary-custom mb-4">
-                            הסביבה שבה אנחנו לומדים קובעת את רמת הריכוז שלנו. למדו איך לנטרל רעשי רקע, התראות דיגיטליות, ולעצב סביבת עבודה אופטימלית.
+                            הסביבה שבה אנחנו לומדים קובעת את רמת הריכוז שלנו. למדו איך לנטרל רעשי רקע, התראות דיגיטליות,
+                            ולעצב סביבת עבודה אופטימלית.
                         </p>
                     </div>
                     <div class="subpage-hero-image-container">
@@ -96,7 +385,8 @@
                         <div class="hero-image-decor-blob-2" aria-hidden="true"></div>
                         <div class="subpage-hero-image-card" aria-hidden="true"></div>
                         <div class="subpage-hero-img-wrapper">
-                            <img src="assets/images/hero_distractions_1779007703727.png" alt="איור של טלפון חכם עם התראות קופצות" class="subpage-hero-img">
+                            <img src="assets/images/hero_distractions_1779007703727.png"
+                                alt="איור של טלפון חכם עם התראות קופצות" class="subpage-hero-img">
                         </div>
                     </div>
                 </div>
@@ -120,19 +410,22 @@
                             <div class="col-12">
                                 <div class="custom-card p-4">
                                     <h3 class="h5 fw-bold text-danger">דום-סקרולינג (Doom Scrolling)</h3>
-                                    <p class="text-secondary-custom small mb-0">גלילה אינסופית ברשתות חברתיות השואבת את תשומת הלב ופוגעת ביכולת להתמקד בטקסטים ארוכים.</p>
+                                    <p class="text-secondary-custom small mb-0">גלילה אינסופית ברשתות חברתיות השואבת את
+                                        תשומת הלב ופוגעת ביכולת להתמקד בטקסטים ארוכים.</p>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="custom-card p-4">
                                     <h3 class="h5 fw-bold text-warning">תסמונת ההתראה הקופצת</h3>
-                                    <p class="text-secondary-custom small mb-0">לוקח למוח בממוצע 23 דקות לחזור לריכוז מלא לאחר הסחת דעת של התראה אחת בנייד.</p>
+                                    <p class="text-secondary-custom small mb-0">לוקח למוח בממוצע 23 דקות לחזור לריכוז
+                                        מלא לאחר הסחת דעת של התראה אחת בנייד.</p>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="custom-card p-4">
                                     <h3 class="h5 fw-bold text-info">התמכרות לתוכן קצר</h3>
-                                    <p class="text-secondary-custom small mb-0">צריכת תוכן קצר (Reels, TikTok) מורידה את טווח הקשב ומקשה על קריאת חומר אקדמי מורכב.</p>
+                                    <p class="text-secondary-custom small mb-0">צריכת תוכן קצר (Reels, TikTok) מורידה את
+                                        טווח הקשב ומקשה על קריאת חומר אקדמי מורכב.</p>
                                 </div>
                             </div>
                         </div>
@@ -141,34 +434,46 @@
             </div>
         </section>
 
-        <section class="py-5 bg-white">
-            <div class="container">
-                <h2 class="fw-bold text-center mb-5">סביבת למידה טובה יותר</h2>
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="row align-items-center mb-5">
-                            <div class="col-md-6">
-                                <div class="custom-card bg-light p-4 border-danger">
-                                    <h3 class="fw-bold h5 text-danger mb-3">לפני: סביבה מסיחה</h3>
-                                    <ul class="text-secondary-custom small ps-3">
-                                        <li>תאורה חלשה או מסנוורת</li>
-                                        <li>שולחן עמוס בניירות, כוסות וציוד לא רלוונטי</li>
-                                        <li>טלפון מונח גלוי ליד הספרים</li>
-                                        <li>רעש רקע (טלוויזיה, שיחות)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mt-4 mt-md-0">
-                                <div class="custom-card bg-soft p-4 border-success">
-                                    <h3 class="fw-bold h5 text-success mb-3">אחרי: סביבה ממוקדת</h3>
-                                    <ul class="text-secondary-custom small ps-3">
-                                        <li>תאורה טבעית או מנורת שולחן ממוקדת</li>
-                                        <li>שולחן נקי, רק מחשב וחומר רלוונטי</li>
-                                        <li>טלפון במצב טיסה או בחדר אחר</li>
-                                        <li>אוזניות מסננות רעשים (או מוזיקת רקע מרגיעה)</li>
-                                    </ul>
-                                </div>
-                            </div>
+        <section class="edu-slide-container">
+            <div class="edu-slide">
+                <!-- Right Side: Before -->
+                <div class="edu-slide-half before">
+                    <h3 class="edu-slide-title before-title">לפני: סביבה מסיחה</h3>
+                    <div class="edu-slide-image-container">
+                        <img src="assets/images/bad environment.png" alt="סביבה מסיחה" class="edu-slide-img">
+
+                        <div class="slide-callout red-accent callout-bad-1">
+                            תאורה חלשה או מסנוורת
+                        </div>
+                        <div class="slide-callout red-accent callout-bad-2">
+                            שולחן עמוס בניירות, כוסות וציוד לא רלוונטי
+                        </div>
+                        <div class="slide-callout red-accent callout-bad-3">
+                            טלפון מונח גלוי ליד הספרים
+                        </div>
+                        <div class="slide-callout red-accent callout-bad-4">
+                            רעש רקע (טלוויזיה, שיחות)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Left Side: After -->
+                <div class="edu-slide-half after">
+                    <h3 class="edu-slide-title after-title">אחרי: סביבה ממוקדת</h3>
+                    <div class="edu-slide-image-container">
+                        <img src="assets/images/good environment.png" alt="סביבה ממוקדת" class="edu-slide-img">
+
+                        <div class="slide-callout green-accent callout-good-1">
+                            תאורה טבעית או מנורת שולחן ממוקדת
+                        </div>
+                        <div class="slide-callout green-accent callout-good-2">
+                            שולחן נקי, רק מחשב וחומר רלוונטי
+                        </div>
+                        <div class="slide-callout green-accent callout-good-3">
+                            טלפון במצב טיסה או בחדר אחר
+                        </div>
+                        <div class="slide-callout green-accent callout-good-4">
+                            אוזניות מסננות רעשים או מוזיקת רקע מרגיעה
                         </div>
                     </div>
                 </div>
@@ -181,23 +486,29 @@
                 <div class="row g-4 justify-content-center">
                     <div class="col-md-4">
                         <div class="custom-card p-4 h-100">
-                            <div class="mb-3"><img src="assets/images/icons/headphones.png" alt="" width="40" height="40" style="object-fit:contain;"></div>
+                            <div class="mb-3"><img src="assets/images/icons/headphones.png" alt="" width="40"
+                                    height="40" style="object-fit:contain;"></div>
                             <h4 class="fw-bold h5">מוזיקת ריכוז</h4>
-                            <p class="text-secondary-custom small">האזנה לתדרים נמוכים (Lo-Fi), מוזיקה קלאסית או "רעש לבן" עוזרת למסך רעשי רקע ולהיכנס ל-Flow.</p>
+                            <p class="text-secondary-custom small">האזנה לתדרים נמוכים (Lo-Fi), מוזיקה קלאסית או "רעש
+                                לבן" עוזרת למסך רעשי רקע ולהיכנס ל-Flow.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="custom-card p-4 h-100">
-                            <div class="mb-3"><img src="assets/images/icons/stop2.png" alt="" width="40" height="40" style="object-fit:contain;"></div>
+                            <div class="mb-3"><img src="assets/images/icons/stop2.png" alt="" width="40" height="40"
+                                    style="object-fit:contain;"></div>
                             <h4 class="fw-bold h5">חוסמי אתרים (Blockers)</h4>
-                            <p class="text-secondary-custom small">השתמשו בתוספים לדפדפן (כמו Cold Turkey או Forest) שחוסמים גישה לרשתות חברתיות בזמן הלמידה.</p>
+                            <p class="text-secondary-custom small">השתמשו בתוספים לדפדפן (כמו Cold Turkey או Forest)
+                                שחוסמים גישה לרשתות חברתיות בזמן הלמידה.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="custom-card p-4 h-100">
-                            <div class="mb-3"><img src="assets/images/icons/yoga.png" alt="" width="40" height="40" style="object-fit:contain;"></div>
+                            <div class="mb-3"><img src="assets/images/icons/yoga.png" alt="" width="40" height="40"
+                                    style="object-fit:contain;"></div>
                             <h4 class="fw-bold h5">הכנה מנטלית</h4>
-                            <p class="text-secondary-custom small">לפני תחילת הלמידה, קחו דקה לנשימות עמוקות וסדרו את המחשבות. זה מאותת למוח שהגיע הזמן להתמקד.</p>
+                            <p class="text-secondary-custom small">לפני תחילת הלמידה, קחו דקה לנשימות עמוקות וסדרו את
+                                המחשבות. זה מאותת למוח שהגיע הזמן להתמקד.</p>
                         </div>
                     </div>
                 </div>
@@ -210,17 +521,24 @@
             <div class="row gy-4 gy-md-0 align-items-start footer-row">
                 <div class="col-md-3 footer-brand-col text-center text-md-start">
                     <a class="d-flex align-items-center gap-2 text-decoration-none footer-brand" href="index.html">
-                        <img src="assets/images/favicon_logo_1779007637509.png" alt="לוגו FocusPLUS" width="30" height="30" class="rounded-circle footer-logo">
-                        <span class="fw-bold text-dark fs-6 footer-brand-text" style="font-family: 'Poppins', sans-serif;">Focus<span style="color: purple;">PLUS</span></span>
+                        <img src="assets/images/favicon_logo_1779007637509.png" alt="לוגו FocusPLUS" width="30"
+                            height="30" class="rounded-circle footer-logo">
+                        <span class="fw-bold text-dark fs-6 footer-brand-text"
+                            style="font-family: 'Poppins', sans-serif;">Focus<span
+                                style="color: purple;">PLUS</span></span>
                     </a>
-                    <p class="text-secondary-custom small footer-desc mb-0">פורטל לסטודנטים שמחבר בין ריכוז, זמן וניהול עומס אקדמי.</p>
+                    <p class="text-secondary-custom small footer-desc mb-0">פורטל לסטודנטים שמחבר בין ריכוז, זמן וניהול
+                        עומס אקדמי.</p>
                 </div>
                 <div class="col-md-2 footer-nav-col text-center">
                     <h5 class="fw-bold mb-3 fs-6 footer-title">ניווט מהיר</h5>
                     <ul class="list-unstyled footer-links">
-                        <li><a href="index.html" class="text-secondary-custom text-decoration-none footer-link">ראשי</a></li>
-                        <li><a href="about.html" class="text-secondary-custom text-decoration-none footer-link">אודות הפרויקט</a></li>
-                        <li><a href="siteMap.html" class="text-secondary-custom text-decoration-none footer-link">מפת האתר</a></li>
+                        <li><a href="index.html" class="text-secondary-custom text-decoration-none footer-link">ראשי</a>
+                        </li>
+                        <li><a href="about.html" class="text-secondary-custom text-decoration-none footer-link">אודות
+                                הפרויקט</a></li>
+                        <li><a href="siteMap.html" class="text-secondary-custom text-decoration-none footer-link">מפת
+                                האתר</a></li>
                     </ul>
                 </div>
 
@@ -233,7 +551,8 @@
                 <div class="col-md-4 footer-contact-col text-center text-md-end">
                     <h5 class="fw-bold mb-3 fs-6 footer-title">יצירת קשר</h5>
                     <p class="text-secondary-custom small mb-2 footer-desc">יש לכם שאלה או הצעה?</p>
-                    <a href="contactUs.html" class="btn btn-outline-primary btn-sm btn-bold-outline footer-btn">צור קשר</a>
+                    <a href="contactUs.html" class="btn btn-outline-primary btn-sm btn-bold-outline footer-btn">צור
+                        קשר</a>
                 </div>
             </div>
             <div class="footer-team text-center mt-3">
@@ -245,7 +564,10 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
