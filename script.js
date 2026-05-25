@@ -153,4 +153,36 @@ document.addEventListener("DOMContentLoaded", () => {
             contactForm.classList.add('was-validated');
         }, false);
     }
+
+    // Stop Animation Toggle Logic for Distractions Page
+    const animToggleBtn = document.getElementById("animToggleBtn");
+    if (animToggleBtn) {
+        animToggleBtn.addEventListener("click", function() {
+            const isPaused = this.dataset.paused === "true";
+            document.querySelectorAll('.phone-notification').forEach(el => {
+                el.style.animationPlayState = isPaused ? 'running' : 'paused';
+            });
+            this.dataset.paused = !isPaused;
+            
+            if (!isPaused) {
+                this.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-play-fill me-1" viewBox="0 0 16 16">
+                        <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                    </svg>
+                    המשך אנימציה
+                `;
+                this.classList.remove('btn-outline-danger');
+                this.classList.add('btn-outline-success');
+            } else {
+                this.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-stop-fill me-1" viewBox="0 0 16 16">
+                        <path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z"/>
+                    </svg>
+                    עצור אנימציה
+                `;
+                this.classList.remove('btn-outline-success');
+                this.classList.add('btn-outline-danger');
+            }
+        });
+    }
 });
