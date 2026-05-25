@@ -41,6 +41,7 @@ body {
   font-family: var(--font-body);
   margin: 0;
   padding: 0;
+  padding-top: 86px;
   overflow-x: hidden;
 }
 
@@ -190,7 +191,11 @@ a:focus {
   background-color: var(--cream-bg) !important;
   border-bottom: 4px solid var(--dark-text);
   padding: 0.8rem 0 !important;
-  z-index: 100;
+  z-index: 1030;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .navbar-brand {
