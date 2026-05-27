@@ -90,9 +90,66 @@
             <div class="container">
                 <h2 class="fw-bold text-center mb-5">ההשפעות של לחץ ממושך</h2>
                 <div class="row justify-content-center">
-                    <div class="col-lg-10">
+                    <div class="col-lg-7 col-md-9">
                         <div class="row g-4 align-items-start">
-                            <div class="col-md-6">
+                            <div class="col-12">
+                                <h3 class="fw-bold mb-4">מה קורה למוח בסטרס?</h3>
+                                <div class="accordion" id="brainCauses">
+                                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                                        <h4 class="accordion-header">
+                                            <button class="accordion-button fw-bold" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#brainAnxiety"
+                                                aria-expanded="true" aria-controls="brainAnxiety">
+                                                חרדה
+                                            </button>
+                                        </h4>
+                                        <div id="brainAnxiety" class="accordion-collapse collapse show"
+                                            data-bs-parent="#brainCauses">
+                                            <div class="accordion-body text-secondary-custom">
+                                                דאגות בלתי פוסקות מהעתיד ומציונים, קושי להירדם וקצב לב מהיר.
+                                                <p class="mt-2 mb-0"><strong>מה עוזר?</strong> תרגיל נשימה 4-7-8 או
+                                                    רישום הדאגות על דף.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                                        <h4 class="accordion-header">
+                                            <button class="accordion-button collapsed fw-bold" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#brainExhaustion"
+                                                aria-expanded="false" aria-controls="brainExhaustion">
+                                                תשישות רגשית
+                                            </button>
+                                        </h4>
+                                        <div id="brainExhaustion" class="accordion-collapse collapse"
+                                            data-bs-parent="#brainCauses">
+                                            <div class="accordion-body text-secondary-custom">
+                                                חוסר סבלנות, תחושת "אין לי כוח יותר", רגישות יתר ובכי בלי סיבה ברורה.
+                                                <p class="mt-2 mb-0"><strong>מה עוזר?</strong> הפסקה של 30 דקות מהמסכים
+                                                    ושיחה עם אדם קרוב.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                                        <h4 class="accordion-header">
+                                            <button class="accordion-button collapsed fw-bold" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#brainMemory"
+                                                aria-expanded="false" aria-controls="brainMemory">
+                                                פגיעה בזיכרון
+                                            </button>
+                                        </h4>
+                                        <div id="brainMemory" class="accordion-collapse collapse"
+                                            data-bs-parent="#brainCauses">
+                                            <div class="accordion-body text-secondary-custom">
+                                                הקורטיזול (הורמון הלחץ) מקשה על אחזור מידע שלמדנו - בדיוק כשצריך אותו
+                                                במבחן.
+                                                <p class="mt-2 mb-0"><strong>מה עוזר?</strong> שינה איכותית, פעילות
+                                                    גופנית קלה ולמידה ברווחי זמן.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
                                 <div class="custom-card p-4 stress-test-card">
                                     <h3 class="h5 fw-bold text-danger mb-3">מדד הלחץ - בדקו את עצמכם</h3>
                                     <p class="text-secondary-custom small mb-4">ענו על 3 שאלות וקבלו תמונה אישית של
@@ -168,54 +225,6 @@
                                             <button type="button" id="stressReset"
                                                 class="btn btn-sm btn-outline-secondary">איפוס
                                                 המבחן 🔄</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="custom-card p-4 brain-card">
-                                    <h3 class="h5 fw-bold mb-3">מה קורה למוח בסטרס?</h3>
-                                    <p class="text-secondary-custom small mb-3">לחצו על כל סעיף כדי לקרוא עוד 👇</p>
-
-                                    <div class="brain-item" data-open="false">
-                                        <button class="brain-toggle" type="button" aria-expanded="false">
-                                            <span class="brain-title"><span class="brain-icon">😰</span>
-                                                <strong>חרדה</strong></span>
-                                            <span class="brain-arrow" aria-hidden="true">▼</span>
-                                        </button>
-                                        <div class="brain-content">
-                                            <p class="mb-2">דאגות בלתי פוסקות מהעתיד ומציונים, קושי להירדם וקצב לב מהיר.
-                                            </p>
-                                            <p class="brain-tip mb-0"><strong>מה עוזר?</strong> תרגיל נשימה 4-7-8 או
-                                                רישום הדאגות על דף.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="brain-item" data-open="false">
-                                        <button class="brain-toggle" type="button" aria-expanded="false">
-                                            <span class="brain-title"><span class="brain-icon">😮‍💨</span>
-                                                <strong>תשישות רגשית</strong></span>
-                                            <span class="brain-arrow" aria-hidden="true">▼</span>
-                                        </button>
-                                        <div class="brain-content">
-                                            <p class="mb-2">חוסר סבלנות, תחושת "אין לי כוח יותר", רגישות יתר ובכי בלי
-                                                סיבה ברורה.</p>
-                                            <p class="brain-tip mb-0"><strong>מה עוזר?</strong> הפסקה של 30 דקות מהמסכים
-                                                ושיחה עם אדם קרוב.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="brain-item" data-open="false">
-                                        <button class="brain-toggle" type="button" aria-expanded="false">
-                                            <span class="brain-title"><span class="brain-icon">🧠</span> <strong>פגיעה
-                                                    בזיכרון</strong></span>
-                                            <span class="brain-arrow" aria-hidden="true">▼</span>
-                                        </button>
-                                        <div class="brain-content">
-                                            <p class="mb-2">הקורטיזול (הורמון הלחץ) מקשה על אחזור מידע שלמדנו - בדיוק
-                                                כשצריך אותו במבחן.</p>
-                                            <p class="brain-tip mb-0"><strong>מה עוזר?</strong> שינה איכותית, פעילות
-                                                גופנית קלה ולמידה ברווחי זמן.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -297,9 +306,9 @@
         <section class="py-5">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-7">
                         <h2 class="fw-bold text-center mb-4">יצירת איזון בריא</h2>
-                        <div class="custom-card p-5 balance-card">
+                        <div class="custom-card p-4 balance-card">
                             <h3 class="h5 fw-bold mb-2">גלגל האיזון - דברים שחשוב לשלב בשגרה:</h3>
                             <p class="text-secondary-custom small mb-4">סמנו את הדברים שאתם כבר עושים השבוע 👇</p>
                             <div class="row g-3" id="balanceList">
@@ -453,15 +462,6 @@
 
         balanceChecks.forEach(c => c.addEventListener('change', updateBalance));
         updateBalance();
-
-        document.querySelectorAll('.brain-toggle').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const item = btn.closest('.brain-item');
-                const open = item.getAttribute('data-open') === 'true';
-                item.setAttribute('data-open', !open);
-                btn.setAttribute('aria-expanded', !open);
-            });
-        });
 
         const stressAnswers = [null, null, null];
         const burnBar = document.getElementById('burnBar');
