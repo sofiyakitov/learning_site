@@ -10,8 +10,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
@@ -240,8 +239,10 @@
                                 <button id="reset-timer-btn" type="button"
                                     class="pomodoro-action-btn pomodoro-icon-btn repeat-timer-btn"
                                     aria-label="איפוס טיימר">
-                                     <span><img src="assets/images/icons/reverse.png" alt="" width="40"
-                                        height="40" class="icon-img"></span>
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M3 12a9 9 0 1 0 3-6.7" />
+                                        <path d="M3 4v6h6" />
+                                    </svg>
                                 </button>
                             </div>
                         </div>
@@ -291,32 +292,34 @@
                         </div>
                     </div>
 
-                <div class="row g-4 d-none" aria-hidden="true">
-                    <div class="col-md-4">
-                        <div class="custom-card p-4 text-center">
-                            <div class="fs-1 mb-3" aria-hidden="true">📝</div>
-                            <h4 class="fw-bold h5">רשימת משימות חכמה</h4>
-                            <p class="text-secondary-custom small">פרקו מטלות גדולות לתת-משימות קטנות וברורות שניתן
-                                לסיים ב-30 דקות או פחות.</p>
+                    <div class="row g-4 d-none" aria-hidden="true">
+                        <div class="col-md-4">
+                            <div class="custom-card p-4 text-center">
+                                <div class="fs-1 mb-3" aria-hidden="true">📝</div>
+                                <h4 class="fw-bold h5">רשימת משימות חכמה</h4>
+                                <p class="text-secondary-custom small">פרקו מטלות גדולות לתת-משימות קטנות וברורות שניתן
+                                    לסיים ב-30 דקות או פחות.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="custom-card p-4 text-center">
+                                <div class="fs-1 mb-3" aria-hidden="true">📅</div>
+                                <h4 class="fw-bold h5">בלוקים של זמן</h4>
+                                <p class="text-secondary-custom small">שריינו ביומן "פגישות עם עצמכם" המוקדשות ללמידה
+                                    בלבד,
+                                    ללא הסחות דעת.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="custom-card p-4 text-center">
+                                <div class="fs-1 mb-3" aria-hidden="true">🥇</div>
+                                <h4 class="fw-bold h5">קביעת סדרי עדיפויות</h4>
+                                <p class="text-secondary-custom small">השתמשו במטריצת אייזנהאואר - טפלו קודם במשימות
+                                    החשובות
+                                    והדחופות ביותר.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="custom-card p-4 text-center">
-                            <div class="fs-1 mb-3" aria-hidden="true">📅</div>
-                            <h4 class="fw-bold h5">בלוקים של זמן</h4>
-                            <p class="text-secondary-custom small">שריינו ביומן "פגישות עם עצמכם" המוקדשות ללמידה בלבד,
-                                ללא הסחות דעת.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="custom-card p-4 text-center">
-                            <div class="fs-1 mb-3" aria-hidden="true">🥇</div>
-                            <h4 class="fw-bold h5">קביעת סדרי עדיפויות</h4>
-                            <p class="text-secondary-custom small">השתמשו במטריצת אייזנהאואר - טפלו קודם במשימות החשובות
-                                והדחופות ביותר.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -376,7 +379,8 @@
                     <a class="d-flex align-items-center gap-2 text-decoration-none footer-brand" href="index.html">
                         <img src="assets/images/favicon_logo_1779007637509.png" alt="לוגו FocusPLUS" width="30"
                             height="30" class="rounded-circle footer-logo">
-                        <span class="fw-bold text-dark fs-6 footer-brand-text">Focus<span class="brand-plus">PLUS</span></span>
+                        <span class="fw-bold text-dark fs-6 footer-brand-text">Focus<span
+                                class="brand-plus">PLUS</span></span>
                     </a>
                     <p class="text-secondary-custom small footer-desc mb-0">פורטל לסטודנטים שמחבר בין ריכוז, זמן וניהול
                         עומס אקדמי.</p>

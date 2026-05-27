@@ -179,8 +179,8 @@ a:focus {
   padding-bottom: 2rem !important;
 }
 
-.hero-section + section.py-5,
-.hero-section + section {
+.hero-section+section.py-5,
+.hero-section+section {
   padding-top: 1.5rem !important;
 }
 
@@ -1472,7 +1472,7 @@ a:focus {
   font-size: 1.6rem;
 }
 
-.balance-card > p {
+.balance-card>p {
   font-size: 1.15rem;
 }
 
@@ -1501,7 +1501,7 @@ a:focus {
   padding-right: 0.4rem;
 }
 
-.balance-item input:checked + label {
+.balance-item input:checked+label {
   color: #2a8a4a;
   font-weight: 600;
 }
@@ -1574,7 +1574,7 @@ a:focus {
   font-size: 1.8rem;
 }
 
-.stress-test-card > p {
+.stress-test-card>p {
   font-size: 1.25rem;
 }
 
@@ -1609,7 +1609,7 @@ a:focus {
   font-size: 1.75rem;
 }
 
-.brain-card > p {
+.brain-card>p {
   font-size: 1.25rem;
   margin-bottom: 1.4rem !important;
 }

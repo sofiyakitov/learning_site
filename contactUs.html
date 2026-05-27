@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="יצירת קשר עם צוות FocusPLUS לשאלות, הצעות ומשוב.">
     <title>FocusPLUS | צור קשר</title>
     <link rel="icon" type="image/png" href="assets/images/favicon_logo_1779007637509.png">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <a href="#main-content" class="visually-hidden-focusable">דלג לתוכן המרכזי</a>
 
@@ -21,10 +25,12 @@
         <nav class="navbar navbar-expand-lg py-3" aria-label="ניווט ראשי">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                    <img src="assets/images/favicon_logo_1779007637509.png" alt="לוגו FocusPLUS" width="40" height="40" class="rounded-circle">
+                    <img src="assets/images/favicon_logo_1779007637509.png" alt="לוגו FocusPLUS" width="40" height="40"
+                        class="rounded-circle">
                     <span class="fw-bold text-dark fs-4">Focus<span class="brand-plus">PLUS</span></span>
                 </a>
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="החלף ניווט">
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="החלף ניווט">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mainNav">
@@ -34,7 +40,8 @@
                         <li class="nav-item"><a class="nav-link" href="procrastination.html">דחיינות</a></li>
                         <li class="nav-item"><a class="nav-link" href="distractions.html">הסחות דעת</a></li>
                         <li class="nav-item"><a class="nav-link" href="stress.html">לחץ ומנוחה</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="contactUs.html">צור קשר</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="contactUs.html">צור
+                                קשר</a></li>
                     </ul>
                 </div>
             </div>
@@ -61,26 +68,32 @@
                                 יש לכם שאלות? טיפ שעזר לכם במיוחד? או הצעה לשיפור? שלחו לנו הודעה ונחזור אליכם בהקדם.
                             </p>
                         </div>
-                        
+
                         <div class="custom-card p-4 p-md-5">
                             <form id="contactForm" class="needs-validation" novalidate>
                                 <div class="row g-3">
                                     <div class="col-md-6">
-                                        <label for="fullName" class="form-label fw-bold">שם מלא <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="fullName" required aria-required="true">
+                                        <label for="fullName" class="form-label fw-bold">שם מלא <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="fullName" required
+                                            aria-required="true">
                                         <div class="invalid-feedback">אנא הזינו שם מלא.</div>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="emailAddress" class="form-label fw-bold">דואר אלקטרוני <span class="text-danger">*</span></label>
-                                        <input type="email" class="form-control" id="emailAddress" required aria-required="true">
+                                        <label for="emailAddress" class="form-label fw-bold">דואר אלקטרוני <span
+                                                class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" id="emailAddress" required
+                                            aria-required="true">
                                         <div class="invalid-feedback">אנא הזינו כתובת דוא"ל תקינה.</div>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="phoneNumber" class="form-label fw-bold">מספר טלפון (אופציונלי)</label>
+                                        <label for="phoneNumber" class="form-label fw-bold">מספר טלפון
+                                            (אופציונלי)</label>
                                         <input type="tel" class="form-control" id="phoneNumber" pattern="[0-9]{9,10}">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="subject" class="form-label fw-bold">נושא הפנייה <span class="text-danger">*</span></label>
+                                        <label for="subject" class="form-label fw-bold">נושא הפנייה <span
+                                                class="text-danger">*</span></label>
                                         <select class="form-select" id="subject" required aria-required="true">
                                             <option selected disabled value="">בחרו נושא...</option>
                                             <option value="1">שאלה כללית</option>
@@ -91,8 +104,10 @@
                                         <div class="invalid-feedback">אנא בחרו נושא לפנייה.</div>
                                     </div>
                                     <div class="col-12">
-                                        <label for="messageBody" class="form-label fw-bold">תוכן ההודעה <span class="text-danger">*</span></label>
-                                        <textarea class="form-control" id="messageBody" rows="5" required aria-required="true"></textarea>
+                                        <label for="messageBody" class="form-label fw-bold">תוכן ההודעה <span
+                                                class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="messageBody" rows="5" required
+                                            aria-required="true"></textarea>
                                         <div class="invalid-feedback">אנא כתבו את תוכן ההודעה.</div>
                                     </div>
                                     <div class="col-12">
@@ -104,7 +119,8 @@
                                         </div>
                                     </div>
                                     <div class="col-12 text-center mt-4">
-                                        <button class="btn btn-primary btn-lg px-5 shadow-sm btn-bold" type="submit">שליחת הודעה</button>
+                                        <button class="btn btn-primary btn-lg px-5 shadow-sm btn-bold"
+                                            type="submit">שליחת הודעה</button>
                                     </div>
                                 </div>
                             </form>
@@ -120,17 +136,23 @@
             <div class="row gy-4 gy-md-0 align-items-start footer-row">
                 <div class="col-md-3 footer-brand-col text-center text-md-start">
                     <a class="d-flex align-items-center gap-2 text-decoration-none footer-brand" href="index.html">
-                        <img src="assets/images/favicon_logo_1779007637509.png" alt="לוגו FocusPLUS" width="30" height="30" class="rounded-circle footer-logo">
-                        <span class="fw-bold text-dark fs-6 footer-brand-text">Focus<span class="brand-plus">PLUS</span></span>
+                        <img src="assets/images/favicon_logo_1779007637509.png" alt="לוגו FocusPLUS" width="30"
+                            height="30" class="rounded-circle footer-logo">
+                        <span class="fw-bold text-dark fs-6 footer-brand-text">Focus<span
+                                class="brand-plus">PLUS</span></span>
                     </a>
-                    <p class="text-secondary-custom small footer-desc mb-0">פורטל לסטודנטים שמחבר בין ריכוז, זמן וניהול עומס אקדמי.</p>
+                    <p class="text-secondary-custom small footer-desc mb-0">פורטל לסטודנטים שמחבר בין ריכוז, זמן וניהול
+                        עומס אקדמי.</p>
                 </div>
                 <div class="col-md-3 footer-nav-col text-center">
                     <h5 class="fw-bold mb-3 fs-6 footer-title">ניווט מהיר</h5>
                     <ul class="list-unstyled footer-links">
-                        <li><a href="index.html" class="text-secondary-custom text-decoration-none footer-link">ראשי</a></li>
-                        <li><a href="about.html" class="text-secondary-custom text-decoration-none footer-link">אודות הפרויקט</a></li>
-                        <li><a href="siteMap.html" class="text-secondary-custom text-decoration-none footer-link">מפת האתר</a></li>
+                        <li><a href="index.html" class="text-secondary-custom text-decoration-none footer-link">ראשי</a>
+                        </li>
+                        <li><a href="about.html" class="text-secondary-custom text-decoration-none footer-link">אודות
+                                הפרויקט</a></li>
+                        <li><a href="siteMap.html" class="text-secondary-custom text-decoration-none footer-link">מפת
+                                האתר</a></li>
                     </ul>
                 </div>
 
@@ -143,7 +165,8 @@
                 <div class="col-md-3 footer-contact-col text-center">
                     <h5 class="fw-bold mb-3 fs-6 footer-title">יצירת קשר</h5>
                     <p class="text-secondary-custom small mb-2 footer-desc">יש לכם שאלה או הצעה?</p>
-                    <a href="contactUs.html" class="btn btn-outline-primary btn-sm btn-bold-outline footer-btn">צור קשר</a>
+                    <a href="contactUs.html" class="btn btn-outline-primary btn-sm btn-bold-outline footer-btn">צור
+                        קשר</a>
                 </div>
             </div>
             <div class="footer-team text-center mt-3">
@@ -155,7 +178,10 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
