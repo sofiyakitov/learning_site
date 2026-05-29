@@ -146,11 +146,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactForm = document.getElementById("contactForm");
     if (contactForm) {
         contactForm.addEventListener("submit", function(event) {
+            event.preventDefault();
             if (!contactForm.checkValidity()) {
-                event.preventDefault();
                 event.stopPropagation();
+                contactForm.classList.add('was-validated');
+            } else {
+                const successMessage = document.getElementById("formSuccessMessage");
+                if (successMessage) {
+                    successMessage.classList.remove("d-none");
+                }
+                contactForm.reset();
+                contactForm.classList.remove('was-validated');
             }
-            contactForm.classList.add('was-validated');
         }, false);
     }
 
