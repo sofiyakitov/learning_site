@@ -8,7 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --deep-purple: #6E59CF;
+  --deep-purple: #4f39ae;
   --bright-pink: #E86FB3;
   --soft-lavender: #C8B8FF;
   --soft-peach: #FFD6C9;
@@ -97,7 +97,7 @@ a:focus {
   z-index: 1;
   display: inline-block;
   color: var(--cream-bg) !important;
-  background-color: #7966D6;
+  background-color: #5b44c2;
   padding: 4px 18px;
   border: 3px solid var(--dark-text);
   transform: none;
@@ -375,7 +375,7 @@ a:focus {
 .hero-credit .hero-credit-subtitle {
   font-weight: 500;
   font-size: 0.95rem;
-  color: rgba(40, 40, 40, 0.72);
+  color: #000;
   letter-spacing: 0.08em;
   opacity: 0.95;
   max-width: 88%;
@@ -814,7 +814,7 @@ a:focus {
 }
 
 .manifesto-text .text-highlight-pink {
-  color: var(--bright-pink);
+  color: #5B44C2FF;
   font-weight: 700;
 }
 
@@ -953,7 +953,7 @@ a:focus {
 }
 
 .mindmap-topic-1 .mindmap-title {
-  color: #FF9800;
+  color: #a63c02;
 }
 
 .mindmap-topic-2 .mindmap-icon {
@@ -962,7 +962,7 @@ a:focus {
 }
 
 .mindmap-topic-2 .mindmap-title {
-  color: #7C4DFF;
+  color: #4527A0;
 }
 
 .mindmap-topic-3 .mindmap-icon {
@@ -971,16 +971,16 @@ a:focus {
 }
 
 .mindmap-topic-3 .mindmap-title {
-  color: #E91E63;
+  color: #880E4F;
 }
 
 .mindmap-topic-4 .mindmap-icon {
-  background: #FFF3E0;
-  color: #FFB300;
+  background: #e5ffe0;
+  color: #58ea65;
 }
 
 .mindmap-topic-4 .mindmap-title {
-  color: #FFB300;
+  color: #28730d;
 }
 
 /* ==========================================================================
@@ -1020,6 +1020,11 @@ a:focus {
 
 .card-coral {
   background-color: var(--accent-coral) !important;
+}
+
+.card-pink .read-more-btn,
+.card-coral .read-more-btn {
+  color: #000 !important;
 }
 
 .card-purple .challenge-card-title,
@@ -1263,7 +1268,7 @@ a:focus {
 .about-chip {
   display: inline-block;
   background-color: var(--bright-pink);
-  color: var(--cream-bg);
+  color: #000;
   border: 3px solid var(--dark-text);
   border-radius: 999px;
   padding: 0.55rem 1rem;
@@ -1577,7 +1582,7 @@ a:focus {
 /* Stress test card (stress page) */
 .stress-test-card {
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-              box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .stress-test-card:hover {
@@ -2370,7 +2375,7 @@ a:focus {
 
 .read-more-btn:hover,
 .read-more-btn:focus {
-  color: var(--dark-text);
+  color: var(--cream-bg);
   transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0px var(--dark-text);
   text-decoration: none;
@@ -2459,12 +2464,18 @@ a:focus {
    Footer
    ========================================================================== */
 .footer-custom {
+  --dark-text: #000;
+  --secondary-text: #000;
   background-color: var(--soft-peach);
   border-top: 4px solid var(--dark-text);
   padding: 28px 0 18px;
   position: relative;
   overflow: hidden;
   margin-top: 40px;
+}
+
+.footer-custom .brand-plus {
+  color: #000;
 }
 
 .footer-row {
@@ -2657,7 +2668,7 @@ a:focus {
    Utilities
    ========================================================================== */
 .text-secondary-custom {
-  color: var(--secondary-text) !important;
+  color: #000 !important;
 }
 
 .bg-soft {
