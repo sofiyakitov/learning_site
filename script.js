@@ -192,4 +192,36 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // Cursor Gradient Trail Effect
+    if (window.matchMedia("(pointer: fine)").matches) {
+        const cursorTrail = document.createElement("div");
+        cursorTrail.className = "cursor-gradient-trail";
+        document.body.appendChild(cursorTrail);
+
+        let isMouseMoving = false;
+        let trailTimeout;
+        let frameScheduled = false;
+
+        document.addEventListener("mousemove", (e) => {
+            if (!frameScheduled) {
+                requestAnimationFrame(() => {
+                    cursorTrail.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+                    frameScheduled = false;
+                });
+                frameScheduled = true;
+            }
+            
+            if (!isMouseMoving) {
+                cursorTrail.style.opacity = "1";
+                isMouseMoving = true;
+            }
+
+            clearTimeout(trailTimeout);
+            trailTimeout = setTimeout(() => {
+                cursorTrail.style.opacity = "0";
+                isMouseMoving = false;
+            }, 400); // Fade out after 400ms of no movement
+        });
+    }
 });
