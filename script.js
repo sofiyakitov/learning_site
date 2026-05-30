@@ -194,33 +194,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Cursor Gradient Trail Effect
+    // The glow is a background layer on <body>; we only move it via CSS variables.
     if (window.matchMedia("(pointer: fine)").matches) {
-        const cursorTrail = document.createElement("div");
-        cursorTrail.className = "cursor-gradient-trail";
-        document.body.appendChild(cursorTrail);
-
-        let isMouseMoving = false;
+        const body = document.body;
         let trailTimeout;
         let frameScheduled = false;
 
         document.addEventListener("mousemove", (e) => {
             if (!frameScheduled) {
                 requestAnimationFrame(() => {
-                    cursorTrail.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+                    body.style.setProperty("--cursor-x", e.clientX + "px");
+                    body.style.setProperty("--cursor-y", e.clientY + "px");
                     frameScheduled = false;
                 });
                 frameScheduled = true;
             }
-            
-            if (!isMouseMoving) {
-                cursorTrail.style.opacity = "1";
-                isMouseMoving = true;
-            }
+
+            body.style.setProperty("--cursor-alpha", "0.45");
 
             clearTimeout(trailTimeout);
             trailTimeout = setTimeout(() => {
-                cursorTrail.style.opacity = "0";
-                isMouseMoving = false;
+                body.style.setProperty("--cursor-alpha", "0");
             }, 400); // Fade out after 400ms of no movement
         });
     }
