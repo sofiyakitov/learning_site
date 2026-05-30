@@ -1283,6 +1283,11 @@ a:focus {
 }
 
 /* Flip cards (stress page) */
+.rest-importance {
+  background-color: rgba(255, 214, 201, 0.55) !important;
+
+}
+
 .flip-card {
   background-color: transparent;
   perspective: 1000px;
