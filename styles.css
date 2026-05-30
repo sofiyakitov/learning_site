@@ -177,6 +177,7 @@ a:focus {
 }
 
 .py-5 {
+  background-color: transparent;
   padding-top: 2rem !important;
   padding-bottom: 2rem !important;
 }
@@ -242,7 +243,8 @@ a:focus {
 .navbar-nav .nav-link:focus {
   background-color: var(--soft-lavender);
   border-color: var(--dark-text);
-  transform: rotate(1.5deg); /* small tilt — positive to avoid a full spin on hover */
+  transform: rotate(1.5deg);
+  /* small tilt — positive to avoid a full spin on hover */
 }
 
 .navbar-nav .nav-link.active {
@@ -316,7 +318,8 @@ a:focus {
   font-size: 0.85rem;
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
-  transform: rotate(359deg); /* gentle tilt */
+  transform: rotate(359deg);
+  /* gentle tilt */
   box-shadow: 3px 3px 0px rgba(30, 30, 30, 0.15);
 }
 
@@ -405,7 +408,8 @@ a:focus {
   border: 3px solid var(--dark-text);
   border-radius: 20px !important;
   z-index: 1;
-  transform: rotate(357deg); /* gentle tilt */
+  transform: rotate(357deg);
+  /* gentle tilt */
 }
 
 .collage-img {
@@ -459,7 +463,8 @@ a:focus {
   background-color: var(--accent-coral);
   bottom: 15%;
   left: 0;
-  transform: rotate(354deg); /* gentle tilt */
+  transform: rotate(354deg);
+  /* gentle tilt */
   animation: sticker-float-2 6s ease-in-out infinite;
 }
 
@@ -467,7 +472,8 @@ a:focus {
   background-color: var(--soft-peach);
   top: 55%;
   right: 0;
-  transform: rotate(350deg); /* gentle tilt */
+  transform: rotate(350deg);
+  /* gentle tilt */
   animation: sticker-float-3 4.5s ease-in-out infinite;
 }
 
@@ -475,7 +481,8 @@ a:focus {
   background-color: var(--soft-lavender);
   top: 0;
   left: 15%;
-  transform: rotate(356deg); /* gentle tilt */
+  transform: rotate(356deg);
+  /* gentle tilt */
   animation: sticker-float-4 5.5s ease-in-out infinite;
 }
 
@@ -849,7 +856,8 @@ a:focus {
 }
 
 .mindmap-topic:hover {
-  transform: scale(1.04) rotate(1deg); /* small tilt — positive to avoid a full spin on hover */
+  transform: scale(1.04) rotate(1deg);
+  /* small tilt — positive to avoid a full spin on hover */
   box-shadow: 10px 10px 0px #333;
 }
 
@@ -1064,7 +1072,8 @@ a:focus {
   border-radius: 24px;
   padding: 2.8rem;
   box-shadow: 8px 8px 0px var(--dark-text);
-  transform: rotate(359deg); /* gentle tilt */
+  transform: rotate(359deg);
+  /* gentle tilt */
 }
 
 .focus-info-text {
@@ -1122,7 +1131,8 @@ a:focus {
   left: 0;
   right: 0;
   margin-inline: auto;
-  transform: rotate(357deg); /* gentle tilt */
+  transform: rotate(357deg);
+  /* gentle tilt */
   width: 75px;
   height: 26px;
   background-color: rgba(255, 255, 255, 0.45);
@@ -1156,7 +1166,8 @@ a:focus {
 }
 
 .sticky-1 {
-  transform: rotate(2deg); /* small tilt — positive to avoid a full spin on hover */
+  transform: rotate(2deg);
+  /* small tilt — positive to avoid a full spin on hover */
   background-color: #FFF9E6 !important;
 }
 
@@ -1166,7 +1177,8 @@ a:focus {
 }
 
 .sticky-3 {
-  transform: rotate(1deg); /* small tilt — positive to avoid a full spin on hover */
+  transform: rotate(1deg);
+  /* small tilt — positive to avoid a full spin on hover */
   background-color: #F0FFF4 !important;
 }
 
@@ -1411,7 +1423,8 @@ a:focus {
 .balance-ring {
   width: 100%;
   height: 100%;
-  transform: rotate(270deg); /* progress ring starts at top */
+  transform: rotate(270deg);
+  /* progress ring starts at top */
 }
 
 .ring-track {
@@ -1862,6 +1875,21 @@ a:focus {
 /* ==========================================================================
    Pomodoro Timer (Procrastination)
    ========================================================================== */
+.pomodoro-section-row {
+  background-color: var(--soft-peach) !important;
+  position: relative;
+  margin: 4rem auto;
+  padding: 4rem 2rem;
+  max-width: 1320px;
+  border: 3px solid var(--dark-text);
+  border-radius: 36px;
+  background: linear-gradient(135deg,
+      rgba(255, 214, 201, 0.75),
+      rgba(255, 246, 241, 0.9));
+  box-shadow: 10px 10px 0 rgba(30, 30, 30, 0.16);
+  overflow: hidden;
+}
+
 .pomodoro-copy p {
   font-size: 1.18rem;
   line-height: 1.8;
@@ -1876,7 +1904,7 @@ a:focus {
   width: 100%;
   max-width: 620px;
   min-width: min(100%, 420px);
-  background: transparent;
+  background: #fff7f7;
 }
 
 .pomodoro-mode-tabs {
@@ -2539,21 +2567,25 @@ a:focus {
 
 @keyframes sticker-float-2 {
   0% {
-    transform: translateY(0px) rotate(354deg); /* gentle tilt */
+    transform: translateY(0px) rotate(354deg);
+    /* gentle tilt */
   }
 
   50% {
-    transform: translateY(8px) rotate(352deg); /* gentle tilt */
+    transform: translateY(8px) rotate(352deg);
+    /* gentle tilt */
   }
 
   100% {
-    transform: translateY(0px) rotate(354deg); /* gentle tilt */
+    transform: translateY(0px) rotate(354deg);
+    /* gentle tilt */
   }
 }
 
 @keyframes sticker-float-3 {
   0% {
-    transform: translateY(0px) rotate(350deg); /* gentle tilt */
+    transform: translateY(0px) rotate(350deg);
+    /* gentle tilt */
   }
 
   50% {
@@ -2561,21 +2593,25 @@ a:focus {
   }
 
   100% {
-    transform: translateY(0px) rotate(350deg); /* gentle tilt */
+    transform: translateY(0px) rotate(350deg);
+    /* gentle tilt */
   }
 }
 
 @keyframes sticker-float-4 {
   0% {
-    transform: translateY(0px) rotate(356deg); /* gentle tilt */
+    transform: translateY(0px) rotate(356deg);
+    /* gentle tilt */
   }
 
   50% {
-    transform: translateY(12px) rotate(358deg); /* gentle tilt */
+    transform: translateY(12px) rotate(358deg);
+    /* gentle tilt */
   }
 
   100% {
-    transform: translateY(0px) rotate(356deg); /* gentle tilt */
+    transform: translateY(0px) rotate(356deg);
+    /* gentle tilt */
   }
 }
 
@@ -2591,7 +2627,8 @@ a:focus {
 
 @keyframes subpage-image-float {
   0% {
-    transform: translateY(0px) rotate(358.5deg); /* gentle tilt */
+    transform: translateY(0px) rotate(358.5deg);
+    /* gentle tilt */
   }
 
   50% {
@@ -2599,7 +2636,8 @@ a:focus {
   }
 
   100% {
-    transform: translateY(0px) rotate(358.5deg); /* gentle tilt */
+    transform: translateY(0px) rotate(358.5deg);
+    /* gentle tilt */
   }
 }
 
@@ -2757,7 +2795,8 @@ a:focus {
 /* Tablet/small-desktop (min-width: 768px) */
 @media (min-width: 768px) {
   .challenge-col-1 {
-    transform: rotate(359deg); /* gentle tilt */
+    transform: rotate(359deg);
+    /* gentle tilt */
   }
 
   .challenge-col-2 {
@@ -2765,7 +2804,8 @@ a:focus {
   }
 
   .challenge-col-3 {
-    transform: rotate(358deg); /* gentle tilt */
+    transform: rotate(358deg);
+    /* gentle tilt */
   }
 }
 
