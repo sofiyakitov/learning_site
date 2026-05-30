@@ -199,7 +199,7 @@ a:focus {
 }
 
 .navbar-brand {
-  font-family: 'Heebo', sans-serif !important;
+  font-family: var(--font-headings) !important;
   font-weight: 800 !important;
   color: var(--dark-text) !important;
   border: 3px solid var(--dark-text);
@@ -223,7 +223,7 @@ a:focus {
 }
 
 .navbar-brand span {
-  font-family: 'Heebo', sans-serif !important;
+  font-family: var(--font-headings) !important;
 }
 
 .navbar-nav .nav-link {
@@ -307,7 +307,7 @@ a:focus {
   display: inline-block;
   background-color: var(--dark-text);
   color: var(--cream-bg);
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-weight: 700;
   padding: 6px 14px;
   border-radius: 30px;
@@ -319,7 +319,7 @@ a:focus {
 }
 
 .hero-title {
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-size: clamp(2.8rem, 5.5vw, 4.5rem);
   line-height: 1.30;
   font-weight: 800 !important;
@@ -361,7 +361,7 @@ a:focus {
   border: 2px solid var(--dark-text);
   border-radius: 28px;
   box-shadow: 6px 6px 0px rgba(30, 30, 30, 0.12);
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-weight: 700;
   font-size: 1.05rem;
   line-height: 1.6;
@@ -379,33 +379,6 @@ a:focus {
   letter-spacing: 0.08em;
   opacity: 0.95;
   max-width: 88%;
-}
-
-/* Faculty Credit Inline (within hero-credit section) */
-.faculty-credit-inline {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-}
-
-.faculty-logo-inline {
-  width: 60px;
-  height: auto;
-  border-radius: 14px;
-  border: 2px solid var(--dark-text);
-  background: var(--cream-bg);
-  padding: 0.15rem;
-  flex-shrink: 0;
-}
-
-.faculty-name-inline {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.92rem;
-  color: var(--dark-text);
-  line-height: 1.3;
-  margin: 0;
 }
 
 /* ==========================================================================
@@ -624,7 +597,7 @@ a:focus {
   border-radius: 999px;
   box-shadow: 0 8px 18px rgba(30, 30, 30, 0.16);
   color: var(--dark-text);
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-size: 0.85rem;
   font-weight: 700;
   line-height: 1.2;
@@ -719,7 +692,7 @@ a:focus {
 }
 
 .section-title {
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-weight: 800;
   font-size: clamp(2.2rem, 4.5vw, 3.5rem);
   color: var(--dark-text);
@@ -773,7 +746,7 @@ a:focus {
 }
 
 .editorial-title {
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-size: clamp(3rem, 6vw, 4.8rem);
   line-height: 1.02;
   letter-spacing: 0.01em;
@@ -1037,41 +1010,6 @@ a:focus {
   border: 2px solid var(--cream-bg) !important;
 }
 
-/* Struggle cards (home page section 1) */
-.struggle-card {
-  padding: 3rem 1.8rem !important;
-}
-
-.struggle-card:hover {
-  transform: translateY(-8px) scale(1.05) !important;
-  box-shadow: 9px 9px 0px var(--dark-text) !important;
-  z-index: 5;
-}
-
-.card-emoji {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-  transition: transform 0.3s ease;
-}
-
-.struggle-card:hover .card-emoji {
-  transform: scale(1.2) rotate(12deg);
-}
-
-.card-title {
-  font-family: 'Heebo', sans-serif;
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-}
-
-.card-text {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
 /* Challenge cards (home page section 2) */
 .challenge-link-card {
   display: block;
@@ -1091,14 +1029,14 @@ a:focus {
   border: 2px solid var(--dark-text);
   border-radius: 8px;
   padding: 5px 14px;
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-weight: 700;
   font-size: 0.8rem;
   box-shadow: 3px 3px 0px rgba(30, 30, 30, 0.2);
 }
 
 .challenge-card-title {
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-weight: 800;
   font-size: 1.9rem;
   margin-bottom: 1.2rem;
@@ -1235,7 +1173,7 @@ a:focus {
 }
 
 .tip-card-title {
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-weight: 700;
   font-size: 1.25rem;
   color: var(--dark-text);
@@ -1248,71 +1186,6 @@ a:focus {
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--dark-text) !important;
-}
-
-/* About page cards */
-.about-paper-card {
-  background-color: var(--cream-bg) !important;
-  border-radius: 32px !important;
-  box-shadow: 10px 10px 0px rgba(30, 30, 30, 0.18) !important;
-  transform: rotate(1deg);
-  min-height: 360px;
-}
-
-.about-hero-tags .text-highlight-pink,
-.about-hero-tags .text-highlight-purple {
-  margin: 0;
-}
-
-.about-chip {
-  display: inline-block;
-  background-color: var(--bright-pink);
-  color: #000;
-  border: 3px solid var(--dark-text);
-  border-radius: 999px;
-  padding: 0.55rem 1rem;
-  font-size: 0.95rem;
-  font-weight: 700;
-  box-shadow: 4px 4px 0px rgba(30, 30, 30, 0.18);
-  margin-bottom: 1.2rem;
-}
-
-.creator-card {
-  position: relative;
-  transform: rotate(-1deg);
-}
-
-.creator-note-card {
-  border-radius: 24px !important;
-  transform: rotate(2deg);
-}
-
-.creator-badge {
-  position: absolute;
-  top: -20px;
-  right: 24px;
-  background-color: var(--dark-text);
-  color: var(--cream-bg);
-  border: 2px solid var(--dark-text);
-  border-radius: 10px;
-  padding: 8px 14px;
-  font-family: 'Heebo', sans-serif;
-  font-weight: 700;
-  font-size: 0.85rem;
-  box-shadow: 3px 3px 0px rgba(30, 30, 30, 0.18);
-}
-
-.about-feature-list li {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.9;
-  margin-bottom: 1rem;
-}
-
-.tech-card {
-  min-height: 230px;
-  transform: rotate(-1deg);
 }
 
 .page-card-link {
@@ -1338,7 +1211,7 @@ a:focus {
 }
 
 .page-card-title {
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-weight: 800;
   font-size: 1.6rem;
   margin-bottom: 1rem;
@@ -1623,69 +1496,6 @@ a:focus {
   display: none;
 }
 
-/* Brain card (stress page) */
-.brain-card h3 {
-  font-size: 1.5rem;
-}
-
-.brain-card>p {
-  font-size: 1.05rem;
-  margin-bottom: 1.2rem !important;
-}
-
-.brain-item {
-  border-bottom: 1px dashed #d6d1c4;
-}
-
-.brain-item:last-child {
-  border-bottom: none;
-}
-
-.brain-title {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.brain-icon {
-  font-size: 1.55rem;
-}
-
-.brain-arrow {
-  font-size: 0.95rem;
-  transition: transform 0.3s ease;
-  color: #888;
-}
-
-.brain-item[data-open="true"] .brain-arrow {
-  transform: rotate(180deg);
-}
-
-.brain-content {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
-  font-size: 1.05rem;
-  color: #555;
-  padding: 0 0.25rem;
-  line-height: 1.6;
-}
-
-.brain-item[data-open="true"] .brain-content {
-  max-height: 500px;
-  opacity: 1;
-  padding: 0 0.25rem 1rem;
-}
-
-.brain-tip {
-  background-color: #f7f3e9;
-  border-right: 3px solid #d63384;
-  padding: 0.8rem 0.95rem;
-  border-radius: 6px;
-  font-size: 1.2rem;
-}
-
 /* ==========================================================================
    Phone Mockup & Notifications (Distractions)
    ========================================================================== */
@@ -1771,7 +1581,7 @@ a:focus {
   margin-bottom: 3rem;
   text-align: center;
   z-index: 2;
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
 }
 
 .edu-slide-title.before-title {
@@ -2007,7 +1817,7 @@ a:focus {
 .accordion-button {
   background-color: var(--cream-bg) !important;
   color: var(--dark-text) !important;
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-weight: 700 !important;
   font-size: 1.35rem !important;
   border-bottom: 3px solid var(--dark-text) !important;
@@ -2101,7 +1911,7 @@ a:focus {
 }
 
 #pomodoro-timer {
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-weight: 900;
   font-size: 4.75rem;
   color: var(--dark-text) !important;
@@ -2190,7 +2000,7 @@ a:focus {
 .pomodoro-widget-time {
   min-width: 72px;
   color: var(--dark-text);
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-size: 1.35rem;
   font-weight: 800;
   text-align: center;
@@ -2246,25 +2056,6 @@ a:focus {
   border-color: #2c3e50;
 }
 
-.brain-toggle {
-  width: 100%;
-  background: transparent;
-  border: none;
-  padding: 0.85rem 0.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.25rem;
-  color: #2c3e50;
-  cursor: pointer;
-  text-align: right;
-  transition: color 0.2s ease;
-}
-
-.brain-toggle:hover {
-  color: #d63384;
-}
-
 /* ==========================================================================
    Forms
    ========================================================================== */
@@ -2305,16 +2096,25 @@ a:focus {
 /* ==========================================================================
    Buttons
    ========================================================================== */
-.btn-bold {
-  background-color: var(--bright-pink) !important;
+/* Shared base for both bold button variants (identical declarations merged) */
+.btn-bold,
+.btn-bold-outline {
   color: var(--dark-text) !important;
   border: 3px solid var(--dark-text) !important;
   border-radius: 14px !important;
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-weight: 700;
   padding: 0.9rem 2.2rem;
   box-shadow: 4px 4px 0px var(--dark-text);
   transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-bold {
+  background-color: var(--bright-pink) !important;
+}
+
+.btn-bold-outline {
+  background-color: transparent !important;
 }
 
 .btn-bold:hover,
@@ -2325,23 +2125,6 @@ a:focus {
   box-shadow: 7px 7px 0px var(--dark-text);
 }
 
-.btn-bold:active {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px var(--dark-text);
-}
-
-.btn-bold-outline {
-  background-color: transparent !important;
-  color: var(--dark-text) !important;
-  border: 3px solid var(--dark-text) !important;
-  border-radius: 14px !important;
-  font-family: 'Heebo', sans-serif;
-  font-weight: 700;
-  padding: 0.9rem 2.2rem;
-  box-shadow: 4px 4px 0px var(--dark-text);
-  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
 .btn-bold-outline:hover,
 .btn-bold-outline:focus {
   background-color: var(--soft-peach) !important;
@@ -2349,6 +2132,8 @@ a:focus {
   box-shadow: 7px 7px 0px var(--dark-text);
 }
 
+/* Shared :active state (identical for both variants) */
+.btn-bold:active,
 .btn-bold-outline:active {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0px var(--dark-text);
@@ -2362,7 +2147,7 @@ a:focus {
   color: var(--cream-bg);
   border: 2px solid var(--dark-text);
   border-radius: 10px;
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-weight: 700;
   font-size: 0.95rem;
   text-decoration: none;
@@ -2408,7 +2193,7 @@ a:focus {
 .table th {
   background-color: var(--soft-lavender) !important;
   color: var(--dark-text) !important;
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-weight: 700;
   border-bottom: 3px solid var(--dark-text) !important;
   padding: 0.9rem 1.1rem !important;
@@ -2494,7 +2279,7 @@ a:focus {
 }
 
 .footer-brand {
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-weight: 800;
   font-size: 1.05rem;
   background-color: var(--cream-bg);
@@ -2510,7 +2295,7 @@ a:focus {
 }
 
 .footer-brand-text {
-  font-family: 'Heebo', sans-serif !important;
+  font-family: var(--font-headings) !important;
   font-weight: 800;
   font-size: 0.95rem;
 }
@@ -2526,7 +2311,7 @@ a:focus {
 }
 
 .footer-title {
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-weight: 700;
   font-size: 0.98rem;
   color: var(--dark-text);
@@ -2560,7 +2345,7 @@ a:focus {
 
 .footer-btn {
   padding: 6px 16px;
-  font-family: 'Heebo', sans-serif;
+  font-family: var(--font-headings);
   font-weight: 700;
   margin-top: 0.35rem;
 }
@@ -2643,26 +2428,6 @@ a:focus {
   height: auto;
 }
 
-.faculty-closing-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.faculty-name-text {
-  font-family: var(--font-body);
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--secondary-text);
-  letter-spacing: 0.3px;
-  margin: 0;
-  line-height: 1.6;
-  margin-top: 0.5rem;
-}
-
 /* ==========================================================================
    Utilities
    ========================================================================== */
@@ -2688,11 +2453,6 @@ a:focus {
 /* Small icon images with object-fit:contain (was inline style="object-fit:contain;") */
 .icon-img {
   object-fit: contain;
-}
-
-/* Constrained max-width helper (was inline style="max-width: 600px;") */
-.max-w-600 {
-  max-width: 600px;
 }
 
 /* ==========================================================================
@@ -2945,26 +2705,6 @@ a:focus {
     left: 18%;
   }
 
-  .struggle-col-1 {
-    transform: translateY(20px) rotate(1deg);
-  }
-
-  .struggle-col-2 {
-    transform: translateY(-15px) rotate(-1.5deg);
-  }
-
-  .struggle-col-3 {
-    transform: translateY(25px) rotate(2deg);
-  }
-
-  .struggle-col-4 {
-    transform: translateY(-5px) rotate(-1deg);
-  }
-
-  .struggle-grid {
-    padding: 2.5rem 0;
-  }
-
   .subpage-hero-row {
     flex-direction: row;
     justify-content: space-between;
@@ -2987,17 +2727,6 @@ a:focus {
 
   .hero-live-text-bubble {
     font-size: 0.9rem;
-  }
-
-  .about-paper-card {
-    min-height: 420px;
-  }
-
-  .about-hero-visual .collage-back-card {
-    top: 35px;
-    right: -35px;
-    width: 98%;
-    height: 98%;
   }
 
   #pomodoro-timer {
@@ -3237,13 +2966,6 @@ a:focus {
 
   .about-hero {
     padding-top: 70px !important;
-  }
-
-  .creator-badge {
-    position: relative;
-    top: 0;
-    right: 0;
-    margin-bottom: 1rem;
   }
 
   .pomodoro-mode-tabs {
